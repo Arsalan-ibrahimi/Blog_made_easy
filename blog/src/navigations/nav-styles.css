@@ -1,0 +1,28 @@
+:root
+{
+    --nav-height: 60px;
+    --nav-bg: #f0f0f0;
+    --nav-color: black;
+    --nav-hover-bg: rgb(0, 0, 0);
+    --nav-hover-color: white;
+}
+
+
+.nav-wrap > ul
+{
+    display: flex;
+    height: var(--nav-height);
+    background-color: var(--nav-bg);
+    color: var(--nav-color);
+    align-items: center;
+   
+    justify-content: center;
+    
+}
+.nav-wrap > ul > li 
+{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
