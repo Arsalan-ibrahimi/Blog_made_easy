@@ -1,28 +1,54 @@
 :root
 {
     --nav-height: 60px;
-    --nav-bg: #f0f0f0;
+    --nav-bg: #fbfafa;
     --nav-color: black;
     --nav-hover-bg: rgb(0, 0, 0);
     --nav-hover-color: white;
 }
 
+.nav-wrap 
+{
+}
 
 .nav-wrap > ul
 {
     display: flex;
-    height: var(--nav-height);
-    background-color: var(--nav-bg);
+    /* height: var(--nav-height); */
+    /* background-color: var(--nav-bg); */
     color: var(--nav-color);
     align-items: center;
    
-    justify-content: center;
+    justify-content: start;
+    padding: 0px 8%;
+
+    
     
 }
 .nav-wrap > ul > li 
 {
     list-style: none;
+    
     padding: 10px;
     cursor: pointer;
 }
+
+.nav-wrap > ul > li > a
+{
+    text-decoration: none;
+    color: rgb(35, 35, 35);
+    font-size: 12px;
+}
+
+
+.footer-wrapper
+{
+    padding: 0.5rem;
+    background: deeppink;
+    color: white;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+
 

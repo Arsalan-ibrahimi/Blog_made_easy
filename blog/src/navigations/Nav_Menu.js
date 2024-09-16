@@ -12,7 +12,7 @@ function Nav_Menu()
                 <li><Link to='/contact'>Contact</Link></li>
                 <Outlet/>
             </ul>
-            <hr/>
+       
         </nav>
 
     )

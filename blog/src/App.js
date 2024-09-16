@@ -5,6 +5,7 @@ import Blog from './pages/Blog.js';
 import Settings from './pages/Settings.js';
 import Contact from './pages/Contact.js';
 import NoPage from './pages/NoPage.js';
+import './app.css';
 
 function App()
 {
