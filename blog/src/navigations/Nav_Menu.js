@@ -1,6 +1,6 @@
 import {Link , Outlet} from 'react-router-dom'
 import './nav-styles.css'
-function Nav_Menu()
+function navMenu()
 {
     return(
        
@@ -20,4 +20,4 @@ function Nav_Menu()
     )
 }
 
-export default Nav_Menu;
+export default navMenu;
