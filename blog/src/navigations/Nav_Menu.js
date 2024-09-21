@@ -10,6 +10,8 @@ function Nav_Menu()
                 <li><Link to='/blog'>Blog</Link></li>
                 <li><Link to='/settings'>Settings</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>
+                <li><Link to='/becomeReader'>Become a Patron</Link></li>
+                <li><Link to='/becomeAuthor'>Become a Writer</Link></li>
                 <Outlet/>
             </ul>
        
