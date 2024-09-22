@@ -4,7 +4,7 @@ function Footer()
 
     return(
         <div className='footer-wrapper'>
-            <p><center>Blogs made easy - Copyright 2024 - Arsalan Ibrahimi</center></p>
+            <p>Blogs made easy - Copyright 2024 - Arsalan Ibrahimi</p>
         </div>
     )
 }

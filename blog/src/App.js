@@ -7,6 +7,7 @@ import Contact from './pages/Contact.js';
 import NoPage from './pages/NoPage.js';
 import BecomeAuthor from './pages/BecomeAuthor.js';
 import BecomeReader from './pages/BecomeReader.js';
+import Thankyoureader from './pages/complimentaries/readerThankyou.js';
 import './app.css';
 
 function App()
@@ -23,6 +24,7 @@ function App()
             <Route path='/contact' element={<Contact/>}/>
             <Route path='/becomeAuthor' element={<BecomeAuthor/>}/>
             <Route path='/becomeReader' element={<BecomeReader/>}/>
+            <Route path='/thankyou' element={<Thankyoureader/>}/>
         </Routes>
     </BrowserRoutes>
         </>

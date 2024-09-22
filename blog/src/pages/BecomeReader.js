@@ -1,6 +1,8 @@
 import Nav_Menu from '../navigations/Nav_Menu';
 import Footer from '../navigations/Footer';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import signupIcon from '../assets/icons/signup.svg';
 // import $ from 'jquery';
 
 
@@ -29,9 +31,12 @@ export default function  BecomeReader(){
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
+        }).then((response) => response.json()).
+        then((data) => {console.log(data)
         });
-        const data = await response.json();
-        console.log(data);
+        
+        
+        window.open("http://localhost:3000/thankyou","_self")
     }
     
 
@@ -44,23 +49,23 @@ export default function  BecomeReader(){
 
             <div className='Patron_Form_Wrap'>
 
-            <form className='Patron_Form' id='Patron_Form' onSubmit={handleForm}>
-            <h1>Sign Up As a Patron</h1>
-                <label>
-                    Name:
-                    <input type="text" name="name" required value={formData.name}
+            <form className='Patron_Form'  id='Patron_Form' onSubmit={handleForm}>
+            <h2 className='flex'> <img src={signupIcon} /> Sign Up As a Patron</h2>
+               
+               
+                   <div className='flex'>
+                   <input type="text" placeholder='Name' name="name" required value={formData.name}
           onChange={handleChange}/>
-                </label>
-                <label>
-                    Email:
-                    <input type="email" name="email" required value={formData.email}
+               
+                
+                    <input type="email" placeholder='Email' name="email" required value={formData.email}
           onChange={handleChange}/>
-                </label>
-                <label>
-                    Phone:
-                    <input type="tel" name="phone" required value={formData.phone}
+                   </div>
+                
+                
+                    <input type="tel"   placeholder='Phone' name="phone" required value={formData.phone}
           onChange={handleChange}/>
-                </label>
+                
                 <button type="submit">Submit</button>
             </form>
 
