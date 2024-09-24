@@ -27,7 +27,7 @@ export default function ReaderThankyou ()
               height={100}
               width={100}
              />
-    <p className=' text-center'> Now you can follow bloggers, comment, like and share blogs</p>
+    <p className='desc-thanks text-center'> Now you can follow bloggers, comment, like and share blogs</p>
         </div>
         </div>
         </div>

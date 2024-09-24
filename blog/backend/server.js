@@ -2,6 +2,7 @@ const express = require('express');
 // const mongoose = require('mongoose');
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const dotenv = require('dotenv').config();
 const app = express();
@@ -30,8 +31,14 @@ app.post('/addReader', (req, res) => {
             let Data = {
                 name: req.body.name,
                 email: req.body.email,
-                phone: req.body.phone
+                phone: req.body.phone,
+                password: req.body.password,
+                user: req.body.user
             }
+
+            let hashedPassword = await bcrypt.hash(req.body.password, 10);
+            Data.password = hashedPassword
+
             const response = await db.db.collection('Users').insertOne(Data);
             console.log(response);
             res.send({data:'Reader Data Received Successfully'});

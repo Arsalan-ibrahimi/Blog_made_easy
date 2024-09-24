@@ -11,8 +11,11 @@ export default function  BecomeReader(){
 
     const [formData, setFormData] = useState({
         name: '',
+        user: '',
+        password: '',
         email: '',
-        phone: ''
+        phone: '',
+
     });
 
     const handleChange = (e) => {
@@ -56,16 +59,19 @@ export default function  BecomeReader(){
                    <div className='flex'>
                    <input type="text" placeholder='Name' name="name" required value={formData.name}
           onChange={handleChange}/>
-               
+                <input type="text" placeholder='Username' name="user" required value={formData.user}
+          onChange={handleChange}/>
                 
+                   </div>
                     <input type="email" placeholder='Email' name="email" required value={formData.email}
           onChange={handleChange}/>
-                   </div>
                 
+<input type="password"   placeholder='Password' name="password" required value={formData.password}
+          onChange={handleChange}/>
                 
                     <input type="tel"   placeholder='Phone' name="phone" required value={formData.phone}
           onChange={handleChange}/>
-                
+
                 <button type="submit">Submit</button>
             </form>
 

@@ -1,10 +1,20 @@
 import Nav_Menu from "../navigations/Nav_Menu";
 import Footer from "../navigations/Footer";
-import HeroImage from "../assets/images/hero_image.svg";
+
+import Lottie from 'react-lottie';
+import * as heroAnimation from '../assets/lotties/hero.json'
 
 function Home() {
+  const defaultOptions = {
+    loop: false,
+    autoplay: true, 
+    animationData: heroAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
   return (
-    <div>
+    <>
       <Nav_Menu />
       <div className="hero-image hero-section">
         <div className="hero-text">
@@ -16,12 +26,16 @@ function Home() {
         </div>
         <div className="hero-illustration">
         
-          <img src={HeroImage} alt="hero-image" className="hero-img" />
+        <Lottie options={defaultOptions}
+              height={100}
+              width={100}
+              speed={0.5}
+             />
 
         </div>
       </div>
       <Footer />
-    </div>
+      </>
   );
 }
 
