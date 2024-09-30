@@ -9,6 +9,7 @@ import BecomeAuthor from './pages/BecomeAuthor.js';
 import BecomeReader from './pages/BecomeReader.js';
 import Thankyoureader from './pages/complimentaries/readerThankyou.js';
 import PublishPage from './pages/publish.js';
+import ReaderProfile from './pages/User_specifics/Reader_profile.js';
 import './app.css';
 
 function App()
@@ -27,6 +28,7 @@ function App()
             <Route path='/becomeReader' element={<BecomeReader/>}/>
             <Route path='/thankyou' element={<Thankyoureader/>}/>
             <Route path='/publish' element={<PublishPage/>}/>
+            <Route path='/readerprofile' element={<ReaderProfile/>}/>
         </Routes>
     </BrowserRoutes>
         </>

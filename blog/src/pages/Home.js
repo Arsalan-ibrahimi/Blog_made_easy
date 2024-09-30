@@ -1,6 +1,8 @@
 import Nav_Menu from "../navigations/Nav_Menu";
 import Footer from "../navigations/Footer";
 
+import FeatureSection from "./sections/feature";
+
 import Lottie from 'react-lottie';
 import * as heroAnimation from '../assets/lotties/hero.json'
 
@@ -18,9 +20,9 @@ function Home() {
       <Nav_Menu />
       <div className="hero-image hero-section">
         <div className="hero-text">
-          <h1>
+          <h2>
             Write and Publish Blogs <br /> Faster and Easier
-          </h1>
+          </h2>
           <p>Write, Edit and Publish blogs anytime and anywhere hasslefree.</p>
           <button>Start Publishing</button>
         </div>
@@ -34,6 +36,10 @@ function Home() {
 
         </div>
       </div>
+
+    <FeatureSection/>
+
+
       <Footer />
       </>
   );

@@ -9,6 +9,7 @@
 
 .nav-wrap 
 {
+    z-index: 100;
 }
 
 .nav-wrap > ul
