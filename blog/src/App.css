@@ -155,6 +155,12 @@ body, html
     border-radius: 3px;
    
 }
+.input-style
+{
+    padding: 0.3rem;
+    border: 0.5px solid grey;
+    border-radius: 3px;
+}
 
 .Patron_Form button 
 {
@@ -411,4 +417,56 @@ align-items: center;
     align-items: center;
   flex-direction: column;
     justify-content: center;
+}
+
+.signin-wrapper
+{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding: 1rem;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: relative;
+}
+
+.loader
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+   
+}
+
+.loader-inner 
+{
+    position: absolute;
+    bottom: 5%;
+
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    border: 2px dashed red;
+    animation: loader 2s ease-in-out infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

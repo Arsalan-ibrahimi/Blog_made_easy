@@ -73,8 +73,8 @@ export default function  BecomeReader(){
           onChange={handleChange}/>
 
                 <button type="submit">Submit</button>
+            <a href='/signInPatron'>Sign In</a>
             </form>
-
 
             </div>
 
