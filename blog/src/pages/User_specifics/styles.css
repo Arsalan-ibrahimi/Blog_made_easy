@@ -795,3 +795,14 @@ flex-direction: column;
   flex-direction: column;
   gap: 1rem;
 }
+.sign-icon
+{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.sign-icon > img 
+{
+  width: 30px;
+  
+}

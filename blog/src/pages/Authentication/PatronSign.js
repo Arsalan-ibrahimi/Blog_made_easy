@@ -1,6 +1,8 @@
 import Nav_Menu from '../../navigations/Nav_Menu';
 import Footer from '../../navigations/Footer';
 import { useState, useEffect } from 'react';
+import SignIcon from '../../assets/icons/login.svg';
+
 
 export default function SigninPatron()
 {
@@ -19,7 +21,8 @@ export default function SigninPatron()
             },
             body: JSON.stringify(patronData)
         }).then((response) => response.json());
-        // console.log(response);
+        
+        response.name ==='Unknown' ? alert("Invalid Email or Password") : window.open("http://localhost:3000/readerProfile","_self");
     
 
         setLoading(false);
@@ -30,15 +33,17 @@ export default function SigninPatron()
 
 
     return (
-        <>
+        <div >
         
+            <div className=' container global-div-wrap'>
             <Nav_Menu/>
-            <div className='signin-wrapper hero-text'>
+            <div className='inner-contents'>
            <form className='signin-form' onSubmit={handleSubmit}>
+             <div className='sign-icon text-center'>  <img src={SignIcon} alt="Sign Icon" /> </div>
                <p>Sign in to your account</p>
                <input type="text" placeholder="Email" name="email" className='input-style' onChange={(e)=> setPatronData({...patronData, email: e.target.value})}/>
                <input type="password" placeholder="Password" name="password" className='input-style' onChange={(e)=> setPatronData({...patronData, password: e.target.value})}/>
-               <button className='signin-button'>Sign In</button>
+               <button className='signin-button universal-button'>Sign In</button>
 
         <div className="loader-wrapper">
            
@@ -47,7 +52,10 @@ export default function SigninPatron()
         </div>
            </form>
             </div>
+            <div>
             <Footer/>
-        </>
+            </div>
+            </div>
+        </div>
     )
 }

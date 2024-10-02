@@ -19,12 +19,12 @@ function Home() {
     <>
       <Nav_Menu />
       <div className="hero-image hero-section">
+      <div className="hero-mask">
         <div className="hero-text">
-          <h2>
-            Write and Publish Blogs <br /> Faster and Easier
-          </h2>
-          <p>Write, Edit and Publish blogs anytime and anywhere hasslefree.</p>
-          <button>Start Publishing</button>
+          <h1 className="great-vibes-regular text-center">
+            Bringing Bloggers and Patrons <br/> Together
+          </h1>
+         
         </div>
         <div className="hero-illustration">
         
@@ -34,6 +34,9 @@ function Home() {
               speed={0.5}
              />
 
+        </div>
+        <p>Write, Edit and Publish blogs anytime and anywhere hasslefree.</p>
+        <button className="universal-button border-button">Start Publishing</button>
         </div>
       </div>
 

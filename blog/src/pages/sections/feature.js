@@ -2,7 +2,9 @@ export default function Feature() {
     return (
         <div className="feature-cont">
 <ol class="articles ">
-<h2>Featured Options </h2>
+<div className="left-text-feature">Featured Options 
+<p>Join our community as a writer, inspiring thousands</p>
+</div>
 
 
   
@@ -36,6 +38,10 @@ export default function Feature() {
 
         </div>
       </div></a></li>
+
+      <div className="right-text-feature">Become a Patron
+      <p>Join as a Patron, supporting thousands of Bloggers</p>
+      </div>
 
       
 </ol>

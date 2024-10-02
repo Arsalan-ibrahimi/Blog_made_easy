@@ -64,28 +64,33 @@ app.post ('/loginReader', (req, res) => {
             console.log(Data);
             const response = await db.db.collection('Users').find({email:Data.email}).toArray();
             console.log(response);
-            res.send({data:'Reader Data Received Successfully'});
+            
 
-            // let hashedPassword = await bcrypt.compare(req.body.password, Data.password);
             if(response.length > 0)
               {
                 console.log("user exits");
                 let hashedPassword = await bcrypt.compare(req.body.password, response[0].password);
-                if(hashedPassword)
-                {
-                  console.log("password matched");
-                }
-                else
-                {
-                  console.log("password not matched");
-                }
+                hashedPassword ? console.log("password matched") : console.log("password not matched");
+
+                res.send(
+                  {
+                    name: response[0].name,
+                    password: true
+                  }
+                )
               }
               else 
               {
                 console.log("user not exits");
-              }
 
-            
+                res.send(
+                  {
+                    name: 'Unknown',
+                    password: false
+                  }
+                )
+
+              }
           } catch (error) {
             console.log('Error occurred');
           }

@@ -46,7 +46,7 @@ export default function  BecomeReader(){
     
    
     return (
-        <div className='container '>
+        <div className='container global-div-wrap'>
             <Nav_Menu/>
             
 
