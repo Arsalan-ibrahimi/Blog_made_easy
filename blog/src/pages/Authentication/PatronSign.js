@@ -16,6 +16,7 @@ export default function SigninPatron()
         setLoading(true);
         const response = await fetch('http://localhost:8000/loginReader', {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },

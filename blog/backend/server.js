@@ -1,13 +1,20 @@
-const express = require('express');
-// const mongoose = require('mongoose');
+const express = require('express');;
 const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const e = require('express');
+const User = require('./models/readers');
+const {v4: uuidv4} = require('uuid')
 
 const dotenv = require('dotenv').config();
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: true, //included origin as true
+  credentials: true, //included credentials as true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 
@@ -28,19 +35,20 @@ app.post('/addReader', (req, res) => {
     // res.send('Reader Data Received Successfully');
     (async () => {
         try {
-            // console.log(req.body);
-            let Data = {
-                name: req.body.name,
-                email: req.body.email,
-                phone: req.body.phone,
-                password: req.body.password,
-                user: req.body.user
-            }
+            
+          
+          const newUser = new User({
+            name: req.body.name,
+            user: req.body.user,
+            password: req.body.password,
+            email: req.body.email,
+            phone:  req.body.phone
+          });
+          
+          let hashedPassword = await bcrypt.hash(req.body.password, 10);
+          newUser.password = hashedPassword;
 
-            let hashedPassword = await bcrypt.hash(req.body.password, 10);
-            Data.password = hashedPassword
-
-            const response = await db.db.collection('Users').insertOne(Data);
+            const response = await db.db.collection('Users').insertOne(newUser);
             console.log(response);
             res.send({data:'Reader Data Received Successfully'});
             
@@ -69,15 +77,35 @@ app.post ('/loginReader', (req, res) => {
             if(response.length > 0)
               {
                 console.log("user exits");
+                
                 let hashedPassword = await bcrypt.compare(req.body.password, response[0].password);
-                hashedPassword ? console.log("password matched") : console.log("password not matched");
-
-                res.send(
+                if(!hashedPassword)
                   {
-                    name: response[0].name,
-                    password: true
+                    res.send(
+                      {
+                        name: 'Unknown',
+                        password: false
+                      }
+                    )
+                    return
                   }
-                )
+                  else
+                  {
+                    const session_id = uuidv4();
+                    console.log(session_id);
+                    res.cookie('uid', session_id);
+                    res.send(
+                      {
+                        name: response[0].name,
+                        password: true
+                      }
+                    )
+
+                  }
+
+           
+
+               
               }
               else 
               {
@@ -92,7 +120,7 @@ app.post ('/loginReader', (req, res) => {
 
               }
           } catch (error) {
-            console.log('Error occurred');
+            console.log('Error occurred',   error);
           }
     })();
   

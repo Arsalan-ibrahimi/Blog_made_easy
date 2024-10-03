@@ -6,6 +6,17 @@ const readerSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  user: {
+    type: String,
+    required: true,
+    trim: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true,
+    trim: true
+  },
   email: {
     type: String,
     required: true,
@@ -21,6 +32,6 @@ const readerSchema = new mongoose.Schema({
   timestamps: true
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', readerSchema);
 
 module.exports = User;
