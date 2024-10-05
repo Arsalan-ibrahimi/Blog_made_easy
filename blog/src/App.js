@@ -11,7 +11,7 @@ import Thankyoureader from './pages/complimentaries/readerThankyou.js';
 import PublishPage from './pages/publish.js';
 import ReaderProfile from './pages/User_specifics/Reader_profile.js';
 import PatronSignin from './pages/Authentication/PatronSign.js'
-import './app.css';
+import 'app.css';
 
 function App()
 {
