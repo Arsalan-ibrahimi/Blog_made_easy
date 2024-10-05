@@ -1,10 +1,25 @@
 import NavMenu from '../../navigations/Nav_Menu';
 import Footer from '../../navigations/Footer';
+
+import { Navigate } from 'react-router-dom';
+
+import Cookies from 'js-cookie';
+
 import './styles.css'
 
+
 export default function  Reader_profile(){
+	
+	if(!Cookies.get('uid')){
+		return <Navigate to="/signInPatron" />
+	}
+	else
+	{
     return (
+		
         <>
+
+		
             <NavMenu/>
             <div className='content-main-wrap'>
 
@@ -186,5 +201,17 @@ export default function  Reader_profile(){
             
             <Footer/>
         </>
+
+
     )
+	}
+
+
+ 
+
 }
+
+
+
+
+

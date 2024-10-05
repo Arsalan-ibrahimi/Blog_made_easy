@@ -57,23 +57,23 @@ export default function  BecomeReader(){
                
                
                    <div className='flex'>
-                   <input type="text" placeholder='Name' name="name" required value={formData.name}
+                   <input type="text" placeholder='Name' name="name" className='input-style' required value={formData.name}
           onChange={handleChange}/>
-                <input type="text" placeholder='Username' name="user" required value={formData.user}
+                <input type="text" placeholder='Username' name="user" className='input-style' required value={formData.user}
           onChange={handleChange}/>
                 
                    </div>
-                    <input type="email" placeholder='Email' name="email" required value={formData.email}
+                    <input type="email" placeholder='Email' name="email" className='input-style' required value={formData.email}
           onChange={handleChange}/>
                 
-<input type="password"   placeholder='Password' name="password" required value={formData.password}
+<input type="password"   placeholder='Password' name="password" className='input-style' required value={formData.password}
           onChange={handleChange}/>
                 
-                    <input type="tel"   placeholder='Phone' name="phone" required value={formData.phone}
+                    <input type="tel"   placeholder='Phone' className='input-style' name="phone" required value={formData.phone}
           onChange={handleChange}/>
 
-                <button type="submit">Submit</button>
-            <a href='/signInPatron'>Sign In</a>
+                <button type="submit" className='universal-button'>Register</button>
+            <a href='/signInPatron' className='text-center'>Sign In</a>
             </form>
 
             </div>

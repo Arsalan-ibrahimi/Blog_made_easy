@@ -1,8 +1,7 @@
 import Nav_Menu from "../navigations/Nav_Menu";
 import Footer from "../navigations/Footer";
-
+import BentoGrid from './sections/bentoGrid';
 import FeatureSection from "./sections/feature";
-
 import Lottie from 'react-lottie';
 import * as heroAnimation from '../assets/lotties/hero.json'
 
@@ -36,11 +35,12 @@ function Home() {
 
         </div>
         <p>Write, Edit and Publish blogs anytime and anywhere hasslefree.</p>
-        <button className="universal-button border-button">Start Publishing</button>
+        <a className="universal-button border-button" href="/publish">Start Publishing</a>
         </div>
       </div>
 
     <FeatureSection/>
+    <BentoGrid/>
 
 
       <Footer />

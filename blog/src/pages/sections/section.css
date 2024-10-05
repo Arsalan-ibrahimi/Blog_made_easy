@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+@layer base, bento;
+
+.bento-wrap
+{
+  padding-bottom: 1rem;
+}
+
+@layer bento {
+	.grid {
+		display: grid;
+
+		grid-template-columns: repeat(12, 2fr);
+		grid-template-areas:
+			"feat-1 feat-1 feat-1 feat-2 feat-2 feat-2 feat-2 feat-2 feat-2 feat-3 feat-3 feat-3"
+			"feat-1 feat-1 feat-1 feat-2 feat-2 feat-2 feat-2 feat-2 feat-2 feat-5 feat-5 feat-5"
+			"feat-1 feat-1 feat-1 main-1 main-1 main-1 main-1 main-1 main-1 feat-5 feat-5 feat-5"
+			"feat-4 feat-4 feat-4 main-1 main-1 main-1 main-1 main-1 main-1 feat-5 feat-5 feat-5"
+			"feat-6 feat-6 feat-6 main-1 main-1 main-1 main-1 main-1 main-1 feat-5 feat-5 feat-5"
+			"feat-6 feat-6 feat-6 main-1 main-1 main-1 main-1 main-1 main-1 feat-9 feat-9 feat-9"
+			"feat-6 feat-6 feat-6 feat-7 feat-7 feat-7 feat-8 feat-8 feat-8 feat-9 feat-9 feat-9"
+			"feat-6 feat-6 feat-6 feat-7 feat-7 feat-7 feat-8 feat-8 feat-8 feat-9 feat-9 feat-9";
+		gap: 1em;
+		
+    height: 100dvh;
+		
+	}
+
+	.grid__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #5d5d58;
+		background-color: #e9f3f5;
+		min-height: 6em;
+		padding: 1.5em;
+		border-radius: .5em;
+	}
+
+	.grid__item--main {
+		grid-area: main-1;
+	}
+	.grid__item--feat-1 {
+		grid-area: feat-1;
+	}
+	.grid__item--feat-2 {
+		grid-area: feat-2;
+	}
+	.grid__item--feat-3 {
+		grid-area: feat-3;
+	}
+	.grid__item--feat-4 {
+		grid-area: feat-4;
+	}
+	.grid__item--feat-5 {
+		grid-area: feat-5;
+	}
+	.grid__item--feat-6 {
+		grid-area: feat-6;
+	}
+	.grid__item--feat-7 {
+		grid-area: feat-7;
+	}
+	.grid__item--feat-8 {
+		grid-area: feat-8;
+	}
+	.grid__item--feat-9 {
+		grid-area: feat-9;
+	}
+
+
+	.grid__content {
+		inline-size: 100%;
+		display: flex;
+		flex-direction: row;
+		gap: .75em;
+		text-align: center;
+		container-type: inline-size;
+	}
+	.grid__content--vertical {
+		flex-direction: column;
+	}
+
+	.grid__txt--big {
+		font-size: clamp(1.75rem, 0.646rem + 12.987cqi, 3rem);
+		
+		font-weight: 800;
+		background-image: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+		-webkit-text-fill-color: transparent;
+		text-fill-color: transparent;
+		-webkit-background-clip: text;
+		background-clip: text;
+	}
+
+	.grid-gradient-01 {
+		background: linear-gradient(125deg, #ECFCFF 0%, #ECFCFF 40%, #B2FCFF calc(40% + 1px), #B2FCFF 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+	}
+	.grid-image-01 {
+		background-image: url(https://images.unsplash.com/photo-1646938691456-a03d01a8276a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+	}
+	
+  .grid-image-02 {
+		background-image: url(https://images.pexels.com/photos/28210177/pexels-photo-28210177/free-photo-of-a-mountain-goat-standing-on-a-grassy-hill.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load);
+		background-size: cover;
+    background-position: center;
+	}
+
+  .grid-image-03 {
+		background-image: url(https://images.pexels.com/photos/1603650/pexels-photo-1603650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+		background-size: cover;
+    background-position: center;
+	}
+
+  .grid-image-04 {
+		background-image: url(https://images.pexels.com/photos/8409076/pexels-photo-8409076.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load);
+		background-size: cover;
+    background-position: center;
+	}
+
+  
+  /** image crime */
+  .grid-image-05 {
+		background-image: url(https://images.pexels.com/photos/923681/pexels-photo-923681.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+		background-size: cover;
+    background-position: center;
+	}
+
+
+  
+	
+	.grid__item--logo img {
+		max-width: 65%;
+	}
+	
+}
+
+

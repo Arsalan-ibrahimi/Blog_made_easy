@@ -6,6 +6,9 @@ const e = require('express');
 const User = require('./models/readers');
 const {v4: uuidv4} = require('uuid')
 
+
+const dashboard = require('./routes/dashboard');
+
 const dotenv = require('dotenv').config();
 const app = express();
 
@@ -16,6 +19,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+
 
 
 
