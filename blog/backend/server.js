@@ -4,6 +4,7 @@ const { default: mongoose } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const e = require('express');
 const User = require('./models/readers');
+const BlogContent = require('./models/blogcontent');
 const {v4: uuidv4} = require('uuid')
 
 
@@ -62,8 +63,6 @@ app.post('/addReader', (req, res) => {
             console.log('Error occurred while inserting');
           }
     })();
-  
-
 });
 
 
@@ -133,6 +132,42 @@ app.post ('/loginReader', (req, res) => {
   })
 
 
+  app.post('/newBlog', (req, res) => {
+    (async () => {
+        try {
+            // const response = await db.db.collection('Blogs').insertOne(req.body);
+            // console.log(response);
+            res.send({data:'Blog Data Received Successfully'});
+
+            const newBlog = new BlogContent({
+              title: req.body.title,
+              content: req.body.content,
+              author: req.body.author,
+              
+            });
+
+            const response = await db.db.collection('BlogContent').insertOne(newBlog);
+            console.log(response);
+
+            
+          } catch (error) {
+            console.log('Error occurred while inserting');
+          }
+    })();
+  });
+
+
+  app.get('/getBlogs', (req, res) => {
+    (async () => {
+        try {
+            const response = await db.db.collection('BlogContent').find({}).toArray();
+            console.log(response);
+            res.send(response);
+          } catch (error) {
+            console.log('Error occurred while inserting', error);
+          }
+    })();
+  });
 
 
 

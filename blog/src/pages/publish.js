@@ -48,12 +48,38 @@ export default function Index() {
     setText(text);
   };
 
-    console.log(text);
+
+
+  function sendToBackend() {
+    const rawContentState = convertToRaw(editorState.getCurrentContent());
+    const html = draftToHtml(rawContentState);
+    
+    let title = document.querySelector('.blog-title').value;
+    fetch('http://localhost:8000/newBlog', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: title,
+        content: html,
+        author: 'Arsalan',
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+
+  }
+
+
   return (
     <>
+    <div class="container global-div-wrap">
     <NavMenu/>
-     
     <div className="padding-sides text-controls">
+    <input type="text"  placeholder="Title" className="input-style blog-title" required />
+
       <Editor
         editorState={editorState}
         toolbarClassName="toolbarClassName"
@@ -74,11 +100,15 @@ export default function Index() {
             { text: "HONEYDEW", value: "honeydew", url: "honeydew" }
           ]
         }}
+
+
       />
-          <button onClick={saveContentAsHtml}>Save as HTML</button>
-          <button onClick={loadHtmlContent}>Load HTML</button>
+          <button onClick={saveContentAsHtml} className="universal-button">Save as HTML</button>
+          <button onClick={loadHtmlContent} className="universal-button">Load HTML</button>
+          <button onClick={sendToBackend} className="universal-button">Save</button>
       </div>
       <Footer/>
+      </div>
     </>
   );
 }

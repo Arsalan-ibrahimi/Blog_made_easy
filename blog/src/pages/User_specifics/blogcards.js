@@ -1,0 +1,14 @@
+import ReactHtmlParser from 'html-react-parser';
+
+export default function BlogCards(props) {
+    let text = props.content.substring(0, 450)
+    return (
+        <div className="blog-cad">
+          
+            <h2 className='blog-card-title'>{props.title}</h2>
+            <p className='blog-card-author'>{props.author}</p>
+            <div>{ReactHtmlParser(text)}</div>
+            
+        </div>
+    )
+}
