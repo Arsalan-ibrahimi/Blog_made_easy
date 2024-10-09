@@ -6,12 +6,16 @@ import NavMenu from "../navigations/Nav_Menu";
 import Footer from "../navigations/Footer";
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
+import { Navigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 import { Fragment } from "react";
 export default function Index() {
+  const [savedHtml, setSavedHtml] = useState();
+
+ 
 
 
-    const [savedHtml, setSavedHtml] = useState();
 
     const saveContentAsHtml = () => {
         const rawContentState = convertToRaw(editorState.getCurrentContent());
@@ -72,7 +76,9 @@ export default function Index() {
 
   }
 
-
+  if(!Cookies.get('uid')){
+    return <Navigate to="/becomeReader" />    
+  }
   return (
     <>
     <div class="container global-div-wrap">

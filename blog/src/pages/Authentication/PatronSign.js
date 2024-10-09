@@ -2,12 +2,14 @@ import Nav_Menu from '../../navigations/Nav_Menu';
 import Footer from '../../navigations/Footer';
 import { useState, useEffect } from 'react';
 import SignIcon from '../../assets/icons/login.svg';
-
+import { Navigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 export default function SigninPatron()
 {
     let [loading,setLoading] = useState(false);
     const [patronData,setPatronData] = useState({});
+    let responseG;
 
 
     const handleSubmit = async (event) => {
@@ -23,8 +25,22 @@ export default function SigninPatron()
             body: JSON.stringify(patronData)
         }).then((response) => response.json());
         
-        response.name ==='Unknown' ? alert("Invalid Email or Password") : window.open("http://localhost:3000/readerProfile","_self");
-    
+        if(response.name ==='Unknown')
+            {
+                setLoading(false);
+                alert("Wrong email or password");
+                
+            }
+            else
+
+            {
+               
+               responseG = true;
+               setLoading(false);
+               Cookies.set('uid', response.uid);
+               Cookies.set('_id', response._id);
+               window.open("http://localhost:3000/readerProfile","_self")
+            }
 
         setLoading(false);
       
@@ -32,7 +48,7 @@ export default function SigninPatron()
    
     }
 
-
+    
     return (
         <div >
         

@@ -7,7 +7,7 @@ const User = require('./models/readers');
 const BlogContent = require('./models/blogcontent');
 const {v4: uuidv4} = require('uuid')
 
-
+const ObjectId = require('mongodb').ObjectId
 const dashboard = require('./routes/dashboard');
 
 const dotenv = require('dotenv').config();
@@ -56,7 +56,7 @@ app.post('/addReader', (req, res) => {
           newUser.password = hashedPassword;
 
             const response = await db.db.collection('Users').insertOne(newUser);
-            console.log(response);
+            // console.log(response);
             res.send({data:'Reader Data Received Successfully'});
             
           } catch (error) {
@@ -102,7 +102,8 @@ app.post ('/loginReader', (req, res) => {
                     res.send(
                       {
                         name: response[0].name,
-                        password: true
+                        password: true,
+                        _id: response[0]._id
                       }
                     )
 
@@ -168,6 +169,23 @@ app.post ('/loginReader', (req, res) => {
           }
     })();
   });
+
+  app.post('/getReader', (req, res) => {
+    (async () => {
+        try {
+        
+          console.log('called: id: ',req.body.id);
+          let objId = new ObjectId(req.body.id.toString());
+            const response = await db.db.collection('Users').find({"_id": objId}).toArray();
+           console.log(response);
+
+          res.send(response);
+          } catch (error) {
+            console.log('Error occurred while inserting', error);
+          }
+    })();
+  });
+
 
 
 
