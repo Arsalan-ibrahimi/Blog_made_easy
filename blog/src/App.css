@@ -729,13 +729,13 @@ padding: 0 10%;
   padding: 1rem;
 }
 
-.blog-card-title 
+.blog-cad-title 
 {
   font-size: 1.5rem;
   font-weight: 200;
   margin-bottom: 0.5rem;
 }
-.blog-card-author 
+.blog-cad-author 
 {
   font-size: 12px;
   font-weight: 400;
@@ -743,3 +743,12 @@ padding: 0 10%;
   color: rgb(70, 69, 69);
   font-family: 'Nunito', sans-serif;
 }
+
+
+
+
+/** Explore blogs*/
+
+/* Parent div with flexbox */
+
+/** Explore Blogs*/

@@ -173,13 +173,22 @@ app.post ('/loginReader', (req, res) => {
   app.post('/getReader', (req, res) => {
     (async () => {
         try {
-        
-          console.log('called: id: ',req.body.id);
+          
+          if(req.body.id)
+          {
+          console.log('called: id: ',req.body.id);  
           let objId = new ObjectId(req.body.id.toString());
             const response = await db.db.collection('Users').find({"_id": objId}).toArray();
-           console.log(response);
-
-          res.send(response);
+            const Blogs = await db.db.collection('BlogContent').find({"author": req.body.id}).toArray();
+           
+           res.send({response: response, Blogs: Blogs});
+          }
+          else
+          {
+            res.send({data:'Not logged in'});
+    
+          }
+     
           } catch (error) {
             console.log('Error occurred while inserting', error);
           }
