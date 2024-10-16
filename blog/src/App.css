@@ -721,17 +721,24 @@ padding: 0 10%;
 
 .blog-cad
 {
-  background-color: white;
+ 
   color: black;
   margin-top: 10px;
   border: lightgrey 1px solid;
   border-radius: 10px;
   padding: 1rem;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+.blog-cad button
+{
+  margin-top: auto;
 }
 
 .blog-cad-title 
 {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
   font-weight: 200;
   margin-bottom: 0.5rem;
 }
@@ -748,7 +755,20 @@ padding: 0 10%;
 
 
 /** Explore blogs*/
+.explore-blogs
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+.explore-blogs div {
+ 
+  width: calc(80% / 3);
+background: white;
+  border-radius: 10px;
 
+}
 /* Parent div with flexbox */
 
 /** Explore Blogs*/

@@ -17,21 +17,30 @@ let id = Cookies.get("_id");
 let userData = {};
 let userBlogs = [];
 
-await fetch("http://localhost:8000/getReader", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ id: id }),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    userData = data.response;
+if(!id)
+{
+	
+}
+else
+{
 
-    let blog = data.Blogs;
+	await fetch("http://localhost:8000/getReader", {
+	  method: "POST",
+	  headers: {
+		"Content-Type": "application/json",
+	  },
+	  body: JSON.stringify({ id: id }),
+	})
+	  .then((response) => response.json())
+	  .then((data) => {
+		userData = data.response;
+	
+		let blog = data.Blogs;
+	
+		userBlogs = blog;
+	  });
+}
 
-    userBlogs = blog;
-  });
 
 export default function Reader_profile() {
   let [activeTab, setActiveTab] = useState("profile");

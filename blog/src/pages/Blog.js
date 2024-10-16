@@ -3,6 +3,7 @@ import Footer from '../navigations/Footer';
 import {useState, useEffect} from 'react';
 import { set } from 'draft-js/lib/DefaultDraftBlockRenderMap';
 import BlogCards from './User_specifics/blogcards'
+import BlogSlider from './sections/BlogSlider'
 
 function Blog(){
 
@@ -33,9 +34,15 @@ function Blog(){
        
 
     return( 
+    <>
+
         <div class="container global-div-wrap">
         <Nav_Menu/>
-            
+
+            <div class="padding-sides">
+
+        <BlogSlider/>
+            </div>
          <div class="padding-sides explore-blogs">
 
         {blogList}
@@ -43,6 +50,7 @@ function Blog(){
          </div>
         <Footer/>
         </div>
+    </>
     )
 }
 

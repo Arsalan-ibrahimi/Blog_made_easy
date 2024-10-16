@@ -139,3 +139,15 @@
 }
 
 
+.blog-slider 
+{
+	padding-top: 1rem;
+	color: white;
+	background: linear-gradient(to right, black 30%, transparent 100%);
+	height: 50dvh;
+}
+
+
+
+
+

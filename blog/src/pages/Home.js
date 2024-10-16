@@ -4,6 +4,7 @@ import BentoGrid from './sections/bentoGrid';
 import FeatureSection from "./sections/feature";
 import Lottie from 'react-lottie';
 import * as heroAnimation from '../assets/lotties/hero.json'
+import BlogSlider from './sections/BlogSlider';
 
 function Home() {
   const defaultOptions = {
@@ -40,6 +41,7 @@ function Home() {
       </div>
 
     <FeatureSection/>
+
     <BentoGrid/>
 
 

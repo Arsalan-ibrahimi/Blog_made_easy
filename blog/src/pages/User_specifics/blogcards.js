@@ -7,7 +7,8 @@ export default function BlogCards(props) {
           
             <h2 className='blog-card-title'>{props.title}</h2>
             <p className='blog-card-author'>{props.author}</p>
-            <div>{ReactHtmlParser(text)}</div>
+            <p>{ReactHtmlParser(text)}</p>
+            <button className='universal-button'>Read More</button>
             
         </div>
     )
