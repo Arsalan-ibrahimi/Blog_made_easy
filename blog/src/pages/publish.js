@@ -67,7 +67,7 @@ export default function Index() {
       body: JSON.stringify({
         title: title,
         content: html,
-        author: 'Arsalan',
+        author: Cookies.get('_id'),
       }),
     })
       .then(response => response.json())

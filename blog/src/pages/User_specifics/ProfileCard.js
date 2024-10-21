@@ -1,22 +1,34 @@
-
+import ProfileCardEdit from "./profileSettings";
+import { useState } from "react";
 
 export default function ProfileCard(props) {
 
+  const [settings, setSettings] = useState(true);
+
+  const profileEdit = () => {
+    setSettings(!settings);
+  }
+  
+  document.body.style.overflow = settings ? "hidden" : "auto";
+  // document.getElementById('root').style.cssText = settings ? "overflow: hidden; background-color: rgba(0,0,0,0.7);" : "overflow: auto; background-color: transparent;";
+
     return(
         <>
+
            
-                <div class="content-panel">
+        {settings ? <ProfileCardEdit setSettings={setSettings} /> : null} 
+                <div class="content-panel" id="prof">
                  
                 <div class="user-profile-area">
   <div class="task-manager">Patron</div>
   <div class="side-wrapper">
    <div class="user-profile">
-    <img src="https://assets.codepen.io/3364143/Screen+Shot+2020-08-01+at+12.24.16.png" alt="" class="user-photo"/>
+    <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" class="user-photo"/>
     <div class="user-name">{props.name}</div>
     <div class="user-mail">natalie.smith@gmail.com</div>
    </div>
    <div class="user-notification">
-    <div class="notify">
+    <div class="notify" onClick={profileEdit}>
      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="currentColor">
       <path d="M13.533 5.6h-.961a.894.894 0 01-.834-.57.906.906 0 01.197-.985l.675-.675a.466.466 0 000-.66l-1.32-1.32a.466.466 0 00-.66 0l-.676.677a.9.9 0 01-.994.191.906.906 0 01-.56-.837V.467A.467.467 0 007.933 0H6.067A.467.467 0 005.6.467v.961c0 .35-.199.68-.57.834a.902.902 0 01-.983-.195L3.37 1.39a.466.466 0 00-.66 0L1.39 2.71a.466.466 0 000 .66l.675.675c.25.25.343.63.193.995a.902.902 0 01-.834.56H.467A.467.467 0 000 6.067v1.866c0 .258.21.467.467.467h.961c.35 0 .683.202.834.57a.904.904 0 01-.197.984l-.675.676a.466.466 0 000 .66l1.32 1.32a.466.466 0 00.66 0l.68-.68a.894.894 0 01.994-.187.897.897 0 01.556.829v.961c0 .258.21.467.467.467h1.866c.258 0 .467-.21.467-.467v-.961c0-.35.202-.683.57-.834a.904.904 0 01.984.197l.676.675a.466.466 0 00.66 0l1.32-1.32a.466.466 0 000-.66l-.68-.68a.894.894 0 01-.187-.994.897.897 0 01.829-.556h.961c.258 0 .467-.21.467-.467V6.067a.467.467 0 00-.467-.467zM7 9.333C5.713 9.333 4.667 8.287 4.667 7S5.713 4.667 7 4.667 9.333 5.713 9.333 7 8.287 9.333 7 9.333z"></path></svg>
     </div>

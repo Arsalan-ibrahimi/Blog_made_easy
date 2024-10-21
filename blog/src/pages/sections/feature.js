@@ -1,6 +1,9 @@
+
+
 export default function Feature() {
     return (
-        <div className="feature-cont padding-sides">
+      
+<div className="feature-cont padding-sides">
 <ol class="articles ">
 <div className="left-text-feature">Featured Options 
 <p>Join our community as a writer, inspiring thousands</p>
@@ -50,3 +53,8 @@ export default function Feature() {
         </div>
     );
 }
+
+
+
+
+

@@ -17,13 +17,8 @@ let id = Cookies.get("_id");
 let userData = {};
 let userBlogs = [];
 
-if(!id)
+if(id)
 {
-	
-}
-else
-{
-
 	await fetch("http://localhost:8000/getReader", {
 	  method: "POST",
 	  headers: {
