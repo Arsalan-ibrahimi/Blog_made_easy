@@ -1122,3 +1122,44 @@ flex-direction: column;
     opacity: 1;
   }
 }
+
+
+.blog-long-card
+{
+  display: flex;
+  width: 100%;
+  
+ 
+  & p{
+    font-size : 0.8rem;
+    color: grey;
+  }
+
+}
+
+.blog-long-img
+{
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 20%;
+  
+}
+
+.blog-long-text{
+  
+  width: 100%;
+  border-top: 1px solid #e7e7ef;
+  border-bottom: 1px solid #e7e7ef;
+  padding: 1rem;
+
+}
+
+.flex-between
+{
+  justify-content: space-between;
+  align-items: center;
+}

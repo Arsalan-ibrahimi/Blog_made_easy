@@ -6,6 +6,9 @@ const e = require('express');
 const User = require('./models/readers');
 const BlogContent = require('./models/blogcontent');
 const {v4: uuidv4} = require('uuid')
+const multer = require('multer');
+
+
 
 const ObjectId = require('mongodb').ObjectId
 const dashboard = require('./routes/dashboard');
@@ -15,12 +18,13 @@ const app = express();
 
 const corsOptions = {
   origin: true, //included origin as true
-  credentials: true, //included credentials as true
+  credentials: true, //included 
 };
 
 app.use(cors(corsOptions));
 app.use(express.json());
-
+//for backend to froend accessibilit see below
+app.use('/uploads', express.static('uploads'));
 app.use(express.urlencoded({ extended: true }));
 
 
@@ -37,6 +41,35 @@ db.once('open', () => {
 });
 
 //MongoDB Connection using env filess
+
+//multer
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, 'uploads/profiles');
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  }
+});
+const upload = multer({ storage });
+
+app.post('/uploadProfile', upload.single('file'), async (req, res) => {
+  try {
+
+    let objId = new ObjectId(req.body.id.toString());
+    const response = await db.db.collection('Users').updateOne({'_id': objId}, {$set: {profile: req.file.originalname}});
+    console.log(response);
+    res.send({ upload: true });
+  } catch (error) {
+    console.log('Error occurred while inserting', error);
+    res.send({ upload: false });
+  }
+});
+
+//multer
+
+
 
 app.post('/addReader', (req, res) => {
     // res.send('Reader Data Received Successfully');
@@ -97,12 +130,13 @@ app.post ('/loginReader', (req, res) => {
                   else
                   {
                     const session_id = uuidv4();
-                    console.log(session_id);
+                    // console.log(session_id);
                     res.cookie('uid', session_id);
                     res.send(
                       {
                         name: response[0].name,
                         password: true,
+                        profile: response[0].profile,
                         _id: response[0]._id
                       }
                     )

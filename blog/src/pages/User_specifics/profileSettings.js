@@ -1,5 +1,4 @@
-
-
+import Cookies from "js-cookie";
 export default function ProfileSettings(props) {
 
     return(
@@ -11,24 +10,26 @@ export default function ProfileSettings(props) {
                 </button>
             <div className="profile-setting-card-title">
             Profile Settings
+            </div> 
 
-            </div>        
-            <div className="details-wrapper">
+            <form action="http://localhost:8000/uploadProfile" 
+          method="POST" enctype="multipart/form-data">
+
+           
+        <input type="file" name="file" required/>
+        <input type="hidden" name="id" value={Cookies.get('_id')}/>
+        <button type="submit">Upload File</button>
+            </form>
+
+            <label>Email</label>
+           <input type="email" placeholder="Email" name="email" className="input-style" />
             <label>Username</label>
            <input type="text" placeholder="Username" name="user" className="input-style" />
-           <label>Email</label>
-           <input type="email" placeholder="Email" name="email" className="input-style" />
-        
            <label>First Name</label>
            <input type="text" placeholder="First Name" name="name" className="input-style" />
            <label>Last Name</label>
            <input type="text" placeholder="Last Name" name="lname" className="input-style" />
           
-          
-            </div>
-
-
-
 
             </div>
         </>

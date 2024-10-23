@@ -46,6 +46,7 @@ export default function Reader_profile() {
       title={blog.title}
       author={blog.author}
       content={blog.content}
+      img={"https://images.pexels.com/photos/28607267/pexels-photo-28607267/free-photo-of-black-and-white-portrait-on-urban-street.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"}
     />
   ));
 
@@ -133,7 +134,7 @@ export default function Reader_profile() {
 
               {activeTab === "profile" &&  
 			  <div class="content">
-					<ProfileCard name={userData[0].name}/>
+					<ProfileCard name={userData[0].name} ProfileURL = {userData[0].profile}/>
 					<div class="content-main">
 					<div class="blog-card-list">
 							<div class="content-header-intro">
