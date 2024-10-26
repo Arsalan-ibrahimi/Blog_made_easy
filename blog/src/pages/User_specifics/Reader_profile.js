@@ -29,12 +29,28 @@ if(id)
 	  .then((response) => response.json())
 	  .then((data) => {
 		userData = data.response;
-	
 		let blog = data.Blogs;
-	
 		userBlogs = blog;
 	  });
 }
+
+
+console.log(userBlogs);
+  const calculateTime = (timestamp) => {
+    const difference = Date.now() - new Date(timestamp).getTime();
+
+    const minutes = Math.floor(difference / 1000 / 60);
+    const hours = Math.floor(difference / 1000 / 60 / 60);
+    const days = Math.floor(difference / 1000 / 60 / 60 / 24);
+
+    if (minutes < 60) {
+      return `${minutes} minutes ago`;
+    } else if (hours < 24) {
+      return `${hours} hours ago`;
+    } else {
+      return `${days} days ago`;
+    }
+  };
 
 
 export default function Reader_profile() {
@@ -44,9 +60,11 @@ export default function Reader_profile() {
     <ReaderBlogCard
       key={blog._id}
       title={blog.title}
-      author={blog.author}
+      author={calculateTime(blog.timestamp)}
       content={blog.content}
-      img={"https://images.pexels.com/photos/28607267/pexels-photo-28607267/free-photo-of-black-and-white-portrait-on-urban-street.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"}
+      img={"https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg?auto=compress&cs=tinysrgb&w=1200"}
+      url={'/BlogPost/' + blog._id}
+
     />
   ));
 
@@ -138,7 +156,7 @@ export default function Reader_profile() {
 					<div class="content-main">
 					<div class="blog-card-list">
 							<div class="content-header-intro">
-								<h2>Continue Reading</h2>
+								<h2>Your Blogs</h2>
 							</div>
 
 						{ReaderBlogCards.length === 0 ? (

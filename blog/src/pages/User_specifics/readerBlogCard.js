@@ -1,7 +1,14 @@
 import HtmlParser from 'html-react-parser';
-
+import { Link } from 'react-router-dom';
 export default function ReaderBlogCard(props) {
-   
+
+
+   let dataToPass = {
+    title:props.title,
+    content:props.content,
+    author:props.author,
+    img:props.img,
+   }
     return (
 
 
@@ -16,8 +23,11 @@ export default function ReaderBlogCard(props) {
                     <h4>{props.title}</h4>
                     <p>{props.author}</p>
                     </div>
-                    <p>{HtmlParser(props.content)} </p>
+          
                     <p>Views 000 </p>
+                    <Link to={`/blogpost`} state={dataToPass} >
+                        <button className='universe-btn' >Read More</button>
+                    </Link>
                 </div>
 
        

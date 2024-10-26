@@ -68,6 +68,7 @@ export default function Index() {
         title: title,
         content: html,
         author: Cookies.get('_id'),
+    
       }),
     })
       .then(response => response.json())
@@ -82,10 +83,19 @@ export default function Index() {
   return (
     <>
     <div class="container global-div-wrap">
-    <NavMenu/>
-    <div className="padding-sides text-controls">
-    <input type="text"  placeholder="Title" className="input-style blog-title" required />
+    <NavMenu />
+    
+    
+    <div className="padding-sides  flex " style={{paddingTop: "10px", paddingBottom: "10px"}}>
+    
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="orange"><path d="M420-160v-520H200v-120h560v120H540v520H420Z"/></svg>
+    <input type="text"  placeholder="Your Blog Title" className="blog-title  "   required >
+    
+    </input>
+    </div>
+    <div className="padding-sides text-controls flex ">
 
+    <div className="editing-controls" >
       <Editor
         editorState={editorState}
         toolbarClassName="toolbarClassName"
@@ -106,12 +116,42 @@ export default function Index() {
             { text: "HONEYDEW", value: "honeydew", url: "honeydew" }
           ]
         }}
-
-
       />
-          <button onClick={saveContentAsHtml} className="universal-button">Save as HTML</button>
-          <button onClick={loadHtmlContent} className="universal-button">Load HTML</button>
-          <button onClick={sendToBackend} className="universal-button">Save</button>
+         
+    </div>
+    <div className="meta-data">
+    <div className="slug-wrap card-style">Slug</div>
+    <div className="card-style flex">
+    <button onClick={sendToBackend} className="universal-button">Publish</button>
+    <button onClick={saveContentAsHtml} className="universal-button">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-save"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+    </button>
+          <button onClick={loadHtmlContent} className="universal-button"> 
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+          
+    </div>
+    <div className="card-style">
+    <p>Blog Feature Image</p>
+    <img style={{width: "100%", height: "100px"}} />
+      <input type="file" id="file-input"  />
+      <label htmlFor="file-input">Upload Image</label>
+    </div>
+
+    <div className="card-style">
+    <p>Blog Category</p>
+  
+      
+  
+      <select name="" id="">
+        <option value="">--select--</option>  
+      </select>
+    </div>
+
+    </div>
+
       </div>
       <Footer/>
       </div>

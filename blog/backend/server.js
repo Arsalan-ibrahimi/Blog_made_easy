@@ -178,7 +178,7 @@ app.post ('/loginReader', (req, res) => {
               title: req.body.title,
               content: req.body.content,
               author: req.body.author,
-              
+              timestamp: Date.now(),
             });
 
             const response = await db.db.collection('BlogContent').insertOne(newBlog);
@@ -214,6 +214,7 @@ app.post ('/loginReader', (req, res) => {
           let objId = new ObjectId(req.body.id.toString());
             const response = await db.db.collection('Users').find({"_id": objId}).toArray();
             const Blogs = await db.db.collection('BlogContent').find({"author": req.body.id}).toArray();
+      
            
            res.send({response: response, Blogs: Blogs});
           }

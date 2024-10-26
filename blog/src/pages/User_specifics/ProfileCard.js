@@ -23,7 +23,7 @@ export default function ProfileCard(props) {
   <div class="task-manager">Patron</div>
   <div class="side-wrapper">
    <div class="user-profile">
-    <img src={'localhost:8000/uploads/profiles/'+props.ProfileURL} alt="" class="user-photo"/>
+    <img src={'http://localhost:8000/uploads/profiles/'+props.ProfileURL} alt="" class="user-photo"/>
     <div class="user-name">{props.name}</div>
     <div class="user-mail">natalie.smith@gmail.com</div>
    </div>

@@ -778,3 +778,16 @@ background: white;
 /* Parent div with flexbox */
 
 /** Explore Blogs*/
+
+
+.rdw-editor-wrapper
+{
+  height: 100%;
+}
+
+.rdw-editor-main
+{
+  height: 50dvh;
+  overflow: auto;
+  padding-bottom: 5px;
+}
