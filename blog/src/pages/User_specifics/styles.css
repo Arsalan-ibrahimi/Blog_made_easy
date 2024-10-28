@@ -10,7 +10,9 @@
   --c-background-tertiary: #ecf3fe;
   --c-background-quaternary: #e9ecf4;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   line-height: 1.5;
   min-height: 100vh;
@@ -1219,3 +1221,5 @@ flex-direction: column;
     transform: translateY(0);
   }
 }
+
+

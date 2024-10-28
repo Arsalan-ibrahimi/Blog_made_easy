@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 *
 {
     margin: 0;
@@ -9,9 +10,10 @@
 
 }
 .great-vibes-regular {
-  font-family: "Archivo", sans-serif;
-  font-weight: 600;
-  font-size: 2.5dvw;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 400;
+  font-style: normal;
   }
 
 #root 
@@ -61,30 +63,12 @@ body, html
 /** Navigation Styles 
 */
 
-.nav-wrap
-{
-    position: sticky;
-    top: 0px;
-    background: hsla(0, 0%, 100%, .8);
-    box-shadow: 0 4px 30px hsla(0, 0%, 42%, .1);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid hsla(0, 0%, 100%, .3);
-    padding: 0.5rem 0px;
- 
-}
+
 
 .hero-image
 {
  
-  background:
-  linear-gradient(-90deg, rgba(0, 0, 0, .04) 1px, transparent 1px),
-  linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
-  #ffffff;
-background-size:
-  30px 30px,
-  30px 30px;
-background-color:white;
+  
    
     width: 100dvw;
     /* background: purple; */
@@ -93,8 +77,42 @@ background-color:white;
     align-items: center;
     justify-content: center;
     gap: 5px;
+
+    transform: translateY(10vh);
+    animation: slideUp 1s linear forwards;
+
     
 }
+
+.square-bg
+{
+  background:
+  linear-gradient(-90deg, rgba(0, 0, 0, .04) 1px, transparent 1px),
+  linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+  #ffffff;
+background-size:
+  30px 30px,
+  30px 30px;
+background-color:white;
+}
+
+
+
+
+
+
+@keyframes slideUp {
+    0% {
+       
+        transform: translateY(10vh);
+    }
+    100% {
+       
+        transform: translateY(0);
+    }
+}
+
+
 
 .hero-mask
 {
@@ -107,12 +125,15 @@ background: linear-gradient(0deg, rgb(255, 255, 255) 0%,  rgba(255, 255, 255, 0.
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 5%;
+ 
   
 
 }
 
-
+.hero-text 
+{
+  margin-top: auto;
+}
 
 
 .hero-text  h1,

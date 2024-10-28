@@ -28,6 +28,9 @@ export default function ReaderBlogCard(props) {
                     <Link to={`/blogpost`} state={dataToPass} >
                         <button className='universe-btn' >Read More</button>
                     </Link>
+                    <Link to={`/publish`} state={dataToPass} >
+                        <button className='universe-btn' >Edit</button>
+                    </Link>
                 </div>
 
        

@@ -19,14 +19,19 @@ function Home() {
   return (
     <>
       <Nav_Menu />
-      <div className="hero-image ">
-      <div className="hero-mask">
-        <div className="hero-text">
+      <div className="square-bg" style={ {overflow: 'hidden', height: '100dvh'}}>
+      <div className="hero-mask" >
+        <div className="hero-text" style={{ overflow: 'hidden'}}>
   
-          <p className=" great-vibes-regular text-center">Write, Edit and Publish blogs anytime and anywhere hasslefree.</p>
+          <p className=" great-vibes-regular  text-center" >Where Ideas Flow and Stories Glow</p>
+    <p className="text-center">
+
+Publish without limits, connect with your audience, <br/> and grow with every post.
+    </p>          
+
+
          
         </div>
-          <a className="universal-button border-button" href="/publish">Start Publishing</a>
   
         
         {/* <Lottie options={defaultOptions}
@@ -34,8 +39,11 @@ function Home() {
               width={100}
               speed={0.5}
              /> */}
+          {/* <a className="universal-button border-button" href="/publish">Start Publishing</a> */}
 
+          <div className="padding-sides" style={{ overflow: 'hidden', height: '70dvh'}}>
         <img className="hero-image" src={heroImage}></img>
+          </div>
      
         
         

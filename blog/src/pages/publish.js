@@ -1,5 +1,5 @@
 import { convertToRaw, EditorState, ContentState } from "draft-js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import NavMenu from "../navigations/Nav_Menu";
@@ -8,11 +8,15 @@ import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import { Navigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { useLocation } from "react-router-dom";
 
 import { Fragment } from "react";
 export default function Index() {
+  const location = useLocation();
   const [savedHtml, setSavedHtml] = useState();
-
+  const [file, setFile] = useState();
+  const [title, setTitle] = useState(location.state?.title || '');
+  
  
 
 
@@ -37,9 +41,24 @@ export default function Index() {
       };
 
 
+      
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const [text, setText] = useState();
+  
+  useEffect(() => {
+    if(location.state)
+      {
+        const html = location.state.content;
+        const contentBlock = htmlToDraft(html);
+        if (contentBlock) {
+            const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks);
+            const newEditorState = EditorState.createWithContent(contentState);
+            setEditorState(newEditorState);
+           
+          }
+      }
+  },[])
   
   const onEditorStateChange = function (editorState) {
     setEditorState(editorState);
@@ -76,12 +95,37 @@ export default function Index() {
       .catch(error => console.error('Error:', error));
 
   }
+  function sendToUpdate() {
+    const rawContentState = convertToRaw(editorState.getCurrentContent());
+    const html = draftToHtml(rawContentState);
+    
+    let title = document.querySelector('.blog-title').value;
+    fetch('http://localhost:8000/updateBlog', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        title: title,
+        content: html,
+        author: Cookies.get('_id'),
+        
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+
+  }
 
   if(!Cookies.get('uid')){
     return <Navigate to="/becomeReader" />    
   }
   return (
+    
     <>
+
+    
     <div class="container global-div-wrap">
     <NavMenu />
     
@@ -89,9 +133,8 @@ export default function Index() {
     <div className="padding-sides  flex " style={{paddingTop: "10px", paddingBottom: "10px"}}>
     
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="orange"><path d="M420-160v-520H200v-120h560v120H540v520H420Z"/></svg>
-    <input type="text"  placeholder="Your Blog Title" className="blog-title  "   required >
-    
-    </input>
+    <input type="text" placeholder="Your Blog Title" className="blog-title"  value={title}   onChange={(e) => setTitle(e.target.value)} required  />
+
     </div>
     <div className="padding-sides text-controls flex ">
 
@@ -120,9 +163,14 @@ export default function Index() {
          
     </div>
     <div className="meta-data">
-    <div className="slug-wrap card-style">Slug</div>
+    <div className="slug-wrap card-style" style={{paddingRight: "10px"}}>
+      <p>Slug</p>
+      <input className="" style={{border: "none", outline: "none"}} value={'http://localhost:3000/blog/'} />
+    </div>
     <div className="card-style flex">
-    <button onClick={sendToBackend} className="universal-button">Publish</button>
+    
+    
+    {location.state?<button className="universal-button"> Republish</button>:<button onClick={sendToBackend} className="universal-button">Publish</button>}
     <button onClick={saveContentAsHtml} className="universal-button">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-save"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
@@ -135,9 +183,8 @@ export default function Index() {
     </div>
     <div className="card-style">
     <p>Blog Feature Image</p>
-    <img style={{width: "100%", height: "100px"}} />
-      <input type="file" id="file-input"  />
-      <label htmlFor="file-input">Upload Image</label>
+  <img src={file} style={{width: "100%", height: "100px"} } />
+      <input type="file" id="file-input" onChange={(e) => setFile(e.target.files[0])} />
     </div>
 
     <div className="card-style">
@@ -156,5 +203,8 @@ export default function Index() {
       <Footer/>
       </div>
     </>
-  );
+    
+);
 }
+
+

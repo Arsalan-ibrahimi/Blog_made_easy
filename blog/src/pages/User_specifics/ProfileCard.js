@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function ProfileCard(props) {
 
-  const [settings, setSettings] = useState(true);
+  const [settings, setSettings] = useState(false);
 
   const profileEdit = () => {
     setSettings(!settings);
