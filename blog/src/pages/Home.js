@@ -6,6 +6,8 @@ import Lottie from 'react-lottie';
 import * as heroAnimation from '../assets/lotties/hero.json'
 // import BlogSlider from './sections/BlogSlider';
 import heroImage from '../assets/icons/hero.png'
+import RollingCards from "./sections/rollingCards";
+// import Showcase from "./sections/showcase";
 
 function Home() {
   const defaultOptions = {
@@ -42,7 +44,10 @@ Publish without limits, connect with your audience, <br/> and grow with every po
           {/* <a className="universal-button border-button" href="/publish">Start Publishing</a> */}
 
           <div className="padding-sides" style={{ overflow: 'hidden', height: '70dvh'}}>
-        <img className="hero-image" src={heroImage}></img>
+        <img className="hero-image" src={heroImage} style={{position: 'relative'}}>
+          
+        </img>
+        
           </div>
      
         
@@ -50,7 +55,11 @@ Publish without limits, connect with your audience, <br/> and grow with every po
         </div>
       </div>
 
+
+      <RollingCards/>
+
     <FeatureSection/>
+
 {/* 
     <BentoGrid/> */}
 
