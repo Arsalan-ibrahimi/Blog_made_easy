@@ -239,7 +239,7 @@ background: linear-gradient(0deg, rgb(255, 255, 255) 0%,  rgba(255, 255, 255, 0.
     padding: 0.5rem;
     border: 0.5px solid lightgrey;
     border-radius: 3px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .Patron_Form button 
@@ -536,13 +536,12 @@ align-items: center;
 
 .loader-inner 
 {
-    position: absolute;
-    bottom: 5%;
+   
 
     border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    border: 2px dashed red;
+    width: 10px;
+    height: 10px;
+    border: 2px dashed white;
     animation: loader 2s ease-in-out infinite;
 }
 

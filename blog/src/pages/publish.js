@@ -130,7 +130,7 @@ export default function Index() {
     <NavMenu />
     
     
-    <div className="padding-sides  flex " style={{paddingTop: "10px", paddingBottom: "10px"}}>
+    <div className="padding-sides  flex " style={{paddingTop: "5%", paddingBottom: "10px"}}>
     
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="orange"><path d="M420-160v-520H200v-120h560v120H540v520H420Z"/></svg>
     <input type="text" placeholder="Your Blog Title" className="blog-title"  value={title}   onChange={(e) => setTitle(e.target.value)} required  />

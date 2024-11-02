@@ -74,28 +74,8 @@ export default function Reader_profile() {
     // console.log(userData[0].name);
     return (
       <div className="container global-div-wrap">
-        <div className="reader-menu-specific">
-			<ul>
-				<li>
-					<a href="/">
-						Profile
-					</a>
-				</li>
-				<li>
-					<a href="/blog">
-						Blog
-					</a>
-				</li>
-				<li>
-					<a href="/publish">
-						Write
-					</a>
-				</li>
-				<li>
-					<button className="btn" onClick={() => {Cookies.remove("uid"); window.location.reload();}}>Log Out -X  </button>
-				</li>
-			</ul>
-		</div>
+        
+        <NavMenu/>
 
 	
         <div className="content-main-wrap">

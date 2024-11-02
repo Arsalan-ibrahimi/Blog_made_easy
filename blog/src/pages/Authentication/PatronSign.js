@@ -7,15 +7,15 @@ import Cookies from 'js-cookie';
 
 export default function SigninPatron()
 {
-    let [loading,setLoading] = useState(false);
+    let [loading,setLoading] = useState();
     const [patronData,setPatronData] = useState({});
-    let responseG;
+    // let responseG;
 
 
     const handleSubmit = async (event) => {
+        setLoading(true);
         event.preventDefault();
        
-        setLoading(true);
         const response = await fetch('http://localhost:8000/loginReader', {
             method: 'POST',
             credentials: 'include',
@@ -35,14 +35,14 @@ export default function SigninPatron()
 
             {
                
-               responseG = true;
-               setLoading(false);
+            //    responseG = true;
+            //    setLoading(false);
                Cookies.set('uid', response.uid);
                Cookies.set('_id', response._id);
                window.open("http://localhost:3000/readerProfile","_self")
+            //    setLoading(false);
             }
 
-        setLoading(false);
       
 
    
@@ -60,13 +60,9 @@ export default function SigninPatron()
                <p>Sign in to your account</p>
                <input type="text" placeholder="Email" name="email" className='input-style' onChange={(e)=> setPatronData({...patronData, email: e.target.value})}/>
                <input type="password" placeholder="Password" name="password" className='input-style' onChange={(e)=> setPatronData({...patronData, password: e.target.value})}/>
-               <button className='signin-button universal-button'>Sign In</button>
+               <button className='signin-button universal-button loader-wrapper'>{loading ?  <div className="loader"> <div className="loader-inner"></div>  </div>: "Sign In"}</button>
 
-        <div className="loader-wrapper">
-           
-         {loading &&  <div className="loader"> <div className="loader-inner"></div>  </div>}
-           
-        </div>
+       
            </form>
             </div>
             <div>

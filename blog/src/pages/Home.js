@@ -7,6 +7,8 @@ import * as heroAnimation from '../assets/lotties/hero.json'
 // import BlogSlider from './sections/BlogSlider';
 import heroImage from '../assets/icons/hero.png'
 import RollingCards from "./sections/rollingCards";
+import Loader from "./sections/loaderGlobal";
+import { useState } from 'react';
 // import Showcase from "./sections/showcase";
 
 function Home() {
@@ -18,8 +20,19 @@ function Home() {
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
+ 
+  const [loading, setLoading] = useState(true);
+  
+
   return (
+
     <>
+
+   
+      {loading ? <Loader /> : null}
+    
+      
+          <>
       <Nav_Menu />
       <div className="square-bg" style={ {overflow: 'hidden', height: '100dvh'}}>
       <div className="hero-mask" >
@@ -44,7 +57,7 @@ Publish without limits, connect with your audience, <br/> and grow with every po
           {/* <a className="universal-button border-button" href="/publish">Start Publishing</a> */}
 
           <div className="padding-sides" style={{ overflow: 'hidden', height: '70dvh'}}>
-        <img className="hero-image" src={heroImage} style={{position: 'relative'}}>
+        <img className="hero-image" src={heroImage} style={{position: 'relative'}} onLoad={() => setLoading(false)}  >
           
         </img>
         
@@ -54,19 +67,27 @@ Publish without limits, connect with your audience, <br/> and grow with every po
         
         </div>
       </div>
-
-
-      <RollingCards/>
-
+    <RollingCards/>
     <FeatureSection/>
+      <Footer />
+          </>
+         
+      
+   
+    
+   
+
+
+    
+
 
 {/* 
     <BentoGrid/> */}
 
 
-      <Footer />
       </>
   );
 }
 
 export default Home;
+
