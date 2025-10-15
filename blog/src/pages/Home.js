@@ -9,17 +9,21 @@ import heroImage from '../assets/icons/hero.png'
 import RollingCards from "./sections/rollingCards";
 import Loader from "./sections/loaderGlobal";
 import { useState } from 'react';
+import WhyUs from "./sections/WhyUs";
 // import Showcase from "./sections/showcase";
+import locomotiveScroll from "locomotive-scroll";
+import { useEffect } from "react";
+import React from "react";
 
 function Home() {
-  const defaultOptions = {
-    loop: false,
-    autoplay: true, 
-    animationData: heroAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
+  // const defaultOptions = {
+  //   loop: false,
+  //   autoplay: true, 
+  //   animationData: heroAnimation,
+  //   rendererSettings: {
+  //     preserveAspectRatio: 'xMidYMid slice'
+  //   }
+  // };
  
   const [loading, setLoading] = useState(true);
   
@@ -27,7 +31,7 @@ function Home() {
   return (
 
     <>
-
+     
    
       {loading ? <Loader /> : null}
     
@@ -61,6 +65,7 @@ Publish without limits, connect with your audience, <br/> and grow with every po
           
         </img>
         
+        
           </div>
      
         
@@ -68,6 +73,7 @@ Publish without limits, connect with your audience, <br/> and grow with every po
         </div>
       </div>
     <RollingCards/>
+    <WhyUs/>
     <FeatureSection/>
       <Footer />
           </>

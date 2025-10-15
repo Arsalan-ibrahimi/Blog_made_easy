@@ -14,8 +14,11 @@ import PatronSignin from './pages/Authentication/PatronSign.js'
 import './App.css';
 import SingleBlog from './pages/sections/SingleBlog.js';
 
+
+
 function App()
 {
+    
     return(
         <>
 

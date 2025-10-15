@@ -39,9 +39,9 @@ function Blog(){
         <div class="container global-div-wrap">
         <Nav_Menu/>
 
-            <div class="padding-sides">
+            <div class="">
 
-        <BlogSlider/>
+        <BlogSlider blogList={blogs}/>
             </div>
          <div class="padding-sides explore-blogs">
 

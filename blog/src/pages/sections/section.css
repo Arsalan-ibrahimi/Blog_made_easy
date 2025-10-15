@@ -147,6 +147,66 @@
 	height: 50dvh;
 }
 
+.blog-slider-page
+{
+	height: 80dvh;
+	border: 0.5px solid red;
+}
+
+
+
+.slider-slide 
+{
+	background: #3E64FF;
+	color: white;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5rem;
+	height: 85dvh;
+}
+
+.blog-slider-page
+{
+
+	display: flex;
+	overflow: hidden;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+.overlay
+{
+		background-image: linear-gradient(to left, rgba(0,0,0,0.8), rgba(0,0,0,0));
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+
+	
+}
+.slider-text-content
+{
+	position: absolute;
+	right: 30%;
+	top: 50%;
+	transform: translate(50%, -50%);
+	z-index: 2;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.blog-card-title
+{
+	font-size: 2rem;
+}
+
+
+
 
 
 
