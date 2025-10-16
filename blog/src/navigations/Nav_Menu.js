@@ -1,14 +1,16 @@
 import {Link , Outlet} from 'react-router-dom'
 import './nav-styles.css'
 import logo from '../assets/logo/quick.ico'
+import burger from '../assets/icons/burger.svg'
 import Cookies from 'js-cookie'
 import LogoutBtn from '../pages/sections/logoutButton'
 function navMenu(props)
 {
     if(Cookies.get("uid"))
     {
-        return(
-        <nav className='nav-wrap'>
+        return( 
+            <>
+        <nav className='nav-wrap' >
          <div className="reader-menu-specific">
 			<ul>
 				<li>
@@ -41,11 +43,14 @@ function navMenu(props)
 		</div>
        
         </nav>
+
+       
+        </>
         )
     }
     else{
     return(
-       
+       <>
         <nav className='nav-wrap'>
             <ul>
                 <li><Link to='/'>Home</Link></li>
@@ -60,6 +65,26 @@ function navMenu(props)
             </ul>
        
         </nav>
+   
+          <nav className=' nav-wrap-mobile'>
+           
+            <li><Link to='/'><img src={logo} className='mbl-logo-nav' ></img></Link></li>
+            <li><img src={burger} className='burger-icon'/></li>
+
+            <div className='menu'>
+                <li>Home</li>
+                  <li>Contact</li>
+                    <li>About Us</li>
+                      <li>Sign In</li>
+            </div>
+
+
+        
+
+        </nav> 
+
+        
+        </>
     )
 }
 }

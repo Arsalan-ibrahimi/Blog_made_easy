@@ -3,17 +3,18 @@ import Footer from "../navigations/Footer";
 import BentoGrid from './sections/bentoGrid';
 import FeatureSection from "./sections/feature";
 import Lottie from 'react-lottie';
-import * as heroAnimation from '../assets/lotties/hero.json'
+// import * as heroAnimation from '../assets/lotties/hero.json'
 // import BlogSlider from './sections/BlogSlider';
 import heroImage from '../assets/icons/hero.png'
 import RollingCards from "./sections/rollingCards";
 import Loader from "./sections/loaderGlobal";
 import { useState } from 'react';
 import WhyUs from "./sections/WhyUs";
+import FAQ from "./sections/accordian";
 // import Showcase from "./sections/showcase";
-import locomotiveScroll from "locomotive-scroll";
-import { useEffect } from "react";
-import React from "react";
+// import locomotiveScroll from "locomotive-scroll";
+// import { useEffect } from "react";
+// import React from "react";
 
 function Home() {
   // const defaultOptions = {
@@ -73,8 +74,9 @@ Publish without limits, connect with your audience, <br/> and grow with every po
         </div>
       </div>
     <RollingCards/>
-    <WhyUs/>
     <FeatureSection/>
+    <FAQ/>
+    
       <Footer />
           </>
          
