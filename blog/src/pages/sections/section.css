@@ -302,9 +302,10 @@ padding: 5% 0px;
 
 .work-container {
   display: flex;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  /* background: #fff;
+  border-radius: 16px; */
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
 
   overflow: hidden;
 }
@@ -312,12 +313,16 @@ padding: 5% 0px;
 .work-image {
   position: relative;
   flex: 1;
+   
 }
 
 .work-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+   background: #fff;
+  border-radius: 16px; 
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .consultation-badge {
@@ -398,4 +403,45 @@ padding: 5% 0px;
   .work-image img {
     height: 250px;
   }
+}
+
+
+/** CTA BTN**/
+/* From Uiverse.io by kamehame-ha */ 
+.cta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #007ACC;
+  outline: 3px #007ACC solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cta-btn .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.cta-btn svg path {
+  transition: 400ms;
+}
+
+.cta-btn:hover {
+  background-color: transparent;
+}
+
+.cta-btn:hover .text {
+  color: #007ACC;
+}
+
+.cta-btn:hover svg path {
+  fill: #007ACC;
 }
