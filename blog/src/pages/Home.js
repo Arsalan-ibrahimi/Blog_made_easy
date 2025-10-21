@@ -1,6 +1,6 @@
 import Nav_Menu from "../navigations/Nav_Menu";
 import Footer from "../navigations/Footer";
-import BentoGrid from './sections/bentoGrid';
+import BentoGrid from './sections/featureSection';
 import FeatureSection from "./sections/feature";
 import Lottie from 'react-lottie';
 // import * as heroAnimation from '../assets/lotties/hero.json'

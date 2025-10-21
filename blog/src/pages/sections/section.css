@@ -214,7 +214,7 @@
 {
 background: #7485f2;
 background: linear-gradient(0deg, rgba(116, 133, 242, 1) 0%, rgba(86, 121, 199, 0) 100%);
-padding-bottom: 2rem;
+padding: 5% 0px;
 }
 
 .features-section {
@@ -297,27 +297,32 @@ padding-bottom: 2rem;
 .work-section {
   display: flex;
   justify-content: center;
-  padding: 60px 20px;
+	padding: 5% 0px;
 }
 
 .work-container {
   display: flex;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  max-width: 1100px;
+  align-items: center;
+  /* background: #fff;
+  border-radius: 16px; */
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); */
+
   overflow: hidden;
 }
 
 .work-image {
   position: relative;
   flex: 1;
+   
 }
 
 .work-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+   background: #fff;
+  border-radius: 16px; 
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .consultation-badge {
@@ -401,6 +406,7 @@ padding-bottom: 2rem;
 }
 
 
+<<<<<<< HEAD
 
 .hero-image-mobile
 {
@@ -427,3 +433,44 @@ padding-bottom: 2rem;
 	}
 
 } */
+=======
+/** CTA BTN**/
+/* From Uiverse.io by kamehame-ha */ 
+.cta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #007ACC;
+  outline: 3px #007ACC solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.cta-btn .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.cta-btn svg path {
+  transition: 400ms;
+}
+
+.cta-btn:hover {
+  background-color: transparent;
+}
+
+.cta-btn:hover .text {
+  color: #007ACC;
+}
+
+.cta-btn:hover svg path {
+  fill: #007ACC;
+}
+>>>>>>> a9388e3b33a81a003e1e441d15d053046a4d7818

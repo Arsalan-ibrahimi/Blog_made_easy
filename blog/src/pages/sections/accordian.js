@@ -1,13 +1,15 @@
+import WorkImage from "../../assets/images/workSection.png"
+import ButtonCTA from "../sections/button"
 export default function Accordian (){
 
     return(
         <>
         
-  <section class="work-section">
+  <section class="work-section padding-sides">
     <div class="work-container">
       
       <div class="work-image">
-        <img src="https://i.pinimg.com/1200x/4b/70/ad/4b70ad18d4a23a4742eef30691848b1a.jpg" alt="Building"/>
+        <img src={WorkImage} alt="Building"/>
         <div class="consultation-badge">Your tools</div>
       </div>
 
@@ -49,7 +51,12 @@ export default function Accordian (){
             </div>
           </div>
 
-          
+
+          <div className="flex">
+          <ButtonCTA />
+          <ButtonCTA />
+
+          </div>
 
         
         </div>
