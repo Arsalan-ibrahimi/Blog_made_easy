@@ -399,3 +399,31 @@ padding-bottom: 2rem;
     height: 250px;
   }
 }
+
+
+
+.hero-image-mobile
+{
+	display: none;
+}
+.hero-image
+{
+	display: none;
+}
+
+/* @media (min-width: 425px) {
+
+	.hero-image-mobile
+	{
+		display: none;
+	}
+
+}
+@media (min-width: 426px) {
+
+	.hero-image
+	{
+		display: block;
+	}
+
+} */

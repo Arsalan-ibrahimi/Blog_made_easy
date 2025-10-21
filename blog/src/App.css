@@ -68,8 +68,6 @@ body, html
 
 .hero-image
 {
- 
-  
    
     width: 100dvw;
     /* background: purple; */
@@ -78,12 +76,35 @@ body, html
     align-items: center;
     justify-content: center;
     gap: 5px;
-
     transform: translateY(10vh);
     animation: slideUp 1s linear forwards;
-
+  display: none;
     
 }
+.hero-image-mobile
+{
+	display: none;
+}
+
+
+ @media (max-width: 750px) {
+
+	.hero-image-mobile
+	{
+		display: block;
+	}
+
+}
+ @media (min-width: 751px) {
+
+	.hero-image
+	{
+		display: flex;
+	}
+
+}
+
+
 
 .square-bg
 {
