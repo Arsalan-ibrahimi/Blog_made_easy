@@ -23,7 +23,7 @@ function App() {
     </div>
 
     <div class="feature-container">
-      <div class="feature-card active">
+      <div class="feature-card ">
         <div class="icon">💳</div>
         <h3>Easy Payment</h3>
         <p>We provide various methods for you to carry out all transactions related to your finances.</p>
@@ -35,7 +35,7 @@ function App() {
         <p>We have the most up-to-date security to support the security of all our customers in carrying out all transactions.</p>
       </div>
 
-      <div class="feature-card">
+      <div class="feature-card active">
         <div class="icon">⚡</div>
         <h3>Fast Customer Service</h3>
         <p>Provide customer service for those of you who have problems 24 hours a week.</p>

@@ -1,5 +1,5 @@
 import WorkImage from "../../assets/images/workSection.png"
-import ButtonCTA from "../sections/button"
+import ButtonCTA from "./button"
 export default function Accordian (){
 
     return(
@@ -53,8 +53,8 @@ export default function Accordian (){
 
 
           <div className="flex">
-          <ButtonCTA />
-          <ButtonCTA />
+          <ButtonCTA innerText={"Read More"} />
+  
 
           </div>
 
