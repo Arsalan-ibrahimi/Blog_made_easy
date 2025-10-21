@@ -406,34 +406,6 @@ padding: 5% 0px;
 }
 
 
-<<<<<<< HEAD
-
-.hero-image-mobile
-{
-	display: none;
-}
-.hero-image
-{
-	display: none;
-}
-
-/* @media (min-width: 425px) {
-
-	.hero-image-mobile
-	{
-		display: none;
-	}
-
-}
-@media (min-width: 426px) {
-
-	.hero-image
-	{
-		display: block;
-	}
-
-} */
-=======
 /** CTA BTN**/
 /* From Uiverse.io by kamehame-ha */ 
 .cta-btn {
@@ -473,4 +445,31 @@ padding: 5% 0px;
 .cta-btn:hover svg path {
   fill: #007ACC;
 }
->>>>>>> a9388e3b33a81a003e1e441d15d053046a4d7818
+
+
+
+.hero-image-mobile
+{
+	display: none;
+}
+.hero-image
+{
+	display: none;
+}
+
+/* @media (min-width: 425px) {
+
+	.hero-image-mobile
+	{
+		display: none;
+	}
+
+}
+@media (min-width: 426px) {
+
+	.hero-image
+	{
+		display: block;
+	}
+
+} */
