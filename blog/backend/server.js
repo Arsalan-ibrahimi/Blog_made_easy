@@ -191,17 +191,19 @@ app.post ('/loginReader', (req, res) => {
     })();
   });
 
-  app.post ('updateBlog', (req, res) => {
-    async () => {
-        try {
-            const response = await db.db.collection('BlogContent').updateOne({'_id': req.body.id}, {$set: {title: req.body.title, content: req.body.content}});
+  app.put ('/updateBlog', async (req, res) => {
+    console.log(req.body);
+
+      const { author, title, content } = req.body;
+    try { 
+          
+            const response =  await db.db.collection('BlogContent').updateOne({'_id': ObjectId.createFromHexString(author)}, {$set: {title: title, content: content}});
             console.log(response);
-            res.send({data:'Blog Data updated Successfully'});
+            res.send({data:'Blog Operation Status: ', response});
             
           } catch (error) {
             console.log('Error occurred updating inserting', error);
           }
-    }
 
   })
 

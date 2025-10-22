@@ -134,7 +134,7 @@ export default function Reader_profile() {
 			  <div class="content">
 					<ProfileCard name={userData[0].name} ProfileURL = {userData[0].profile}/>
 					<div class="content-main">
-					<div class="blog-card-list">
+					<div class="blog-card-list-profile">
 							<div class="content-header-intro">
 								<h2>Your Blogs</h2>
 							</div>
