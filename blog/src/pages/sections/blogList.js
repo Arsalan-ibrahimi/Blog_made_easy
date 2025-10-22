@@ -1,9 +1,11 @@
+import CTABTN from "./button"
 export default function blogList()
 {
     return(
         
 
 <section class="blog-list">
+    <div style={{display: "flex", justifyContent: "center", paddingBottom: "1rem"}}><h1>Blogs</h1></div>
   <div class="header-blog">
     <div>
       <p class="highlight">Read Now!</p>
@@ -21,26 +23,48 @@ export default function blogList()
   </div>
 
   <div class="blog-grid">
-    <div class="blog-card">
-      <img src="https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg" alt="Blog 1"/>
-      <h3>Building a Creative Mindset</h3>
+    <div class="blog-card-list">
+      <img src="https://images.unsplash.com/photo-1760373899546-23db228c8a0d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Blog 1"/>
+     <div className="blog-text-list">
+       <h3>Building a Creative Mindset</h3>
+      <p>Stories, guides, and ideas written for you.Stories, guides, and ideas written for you.</p>
       <p class="meta">Mindset • Oct 20, 2025</p>
+       <CTABTN  innerText={"Read Article"}/>
+     </div>
+     
     </div>
-    <div class="blog-card">
-      <img src="https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg" alt="Blog 2"/>
-      <h3>Minimalism in Modern Design</h3>
-      <p class="meta">Design • Oct 18, 2025</p>
+     <div class="blog-card-list">
+      <img src="https://images.unsplash.com/photo-1760373899546-23db228c8a0d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Blog 1"/>
+     <div className="blog-text-list">
+       <h3>Building a Creative Mindset</h3>
+      <p>Stories, guides, and ideas written for you.Stories, guides, and ideas written for you.</p>
+      <p class="meta">Mindset • Oct 20, 2025</p>
+       <CTABTN  innerText={"Read Article"}/>
+     </div>
+     
     </div>
-    <div class="blog-card">
-      <img src="https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg" alt="Blog 3"/>
-      <h3>The Power of Daily Habits</h3>
-      <p class="meta">Lifestyle • Oct 12, 2025</p>
+     <div class="blog-card-list">
+      <img src="https://images.unsplash.com/photo-1760373899546-23db228c8a0d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Blog 1"/>
+     <div className="blog-text-list">
+       <h3>Building a Creative Mindset</h3>
+      <p>Stories, guides, and ideas written for you.Stories, guides, and ideas written for you.</p>
+      <p class="meta">Mindset • Oct 20, 2025</p>
+       <CTABTN  innerText={"Read Article"}/>
+     </div>
+     
     </div>
-    <div class="blog-card">
-      <img src="https://images.pexels.com/photos/1098365/pexels-photo-1098365.jpeg" alt="Blog 4"/>
-      <h3>How to Find Your Voice in Writing</h3>
-      <p class="meta">Writing • Oct 8, 2025</p>
+     <div class="blog-card-list">
+      <img src="https://images.unsplash.com/photo-1760373899546-23db228c8a0d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" alt="Blog 1"/>
+     <div className="blog-text-list">
+       <h3>Building a Creative Mindset</h3>
+      <p>Stories, guides, and ideas written for you.Stories, guides, and ideas written for you.</p>
+      <p class="meta">Mindset • Oct 20, 2025</p>
+       <CTABTN  innerText={"Read Article"}/>
+     </div>
+     
     </div>
+   
+   
   </div>
 </section>
 

@@ -10,6 +10,7 @@ import FeatureSection from "./sections/feature";
 import RollingCards from "./sections/rollingCards";
 import FAQ from './sections/WhyUs';
 import BlogList from './sections/blogList'
+import Testimonils from "./sections/testimonials";
 
 function Home() {
 
@@ -69,7 +70,7 @@ function Home() {
           <Services/>
           <FAQ/>
           <BlogList/>
-            
+          <Testimonils/>
             
             
             
