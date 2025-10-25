@@ -11,11 +11,12 @@ import Cookies from 'js-cookie';
 import { useLocation } from "react-router-dom";
 
 // import { Fragment } from "react";
-export default function Index() {
+export default function Index( ) {
   const location = useLocation();
   const [savedHtml, setSavedHtml] = useState();
   const [file, setFile] = useState();
   const [title, setTitle] = useState(location.state?.title || '');
+  let imageUrl;
   
  
 
@@ -59,6 +60,9 @@ export default function Index() {
           }
       }
   },[])
+
+
+
   
   const onEditorStateChange = function (editorState) {
     setEditorState(editorState);
@@ -76,7 +80,7 @@ export default function Index() {
   function sendToBackend() {
     const rawContentState = convertToRaw(editorState.getCurrentContent());
     const html = draftToHtml(rawContentState);
-    
+   
     let title = document.querySelector('.blog-title').value;
     fetch('http://localhost:8000/newBlog', {
       method: 'POST',
@@ -84,7 +88,7 @@ export default function Index() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-       
+        
         title: title,
         content: html,
         author: Cookies.get('_id'),
@@ -98,18 +102,23 @@ export default function Index() {
   }
   function sendToUpdate() {
 
+     if(location.state)
+      {
+
     const rawContentState = convertToRaw(editorState.getCurrentContent());
     const html = draftToHtml(rawContentState);   
     let title = document.querySelector('.blog-title').value;
+  let key = location.state?.key || location.pathname.split("/").pop();
+  const result = key.split("/").pop();
+ 
 
-    console.log(html,title)
     fetch('http://localhost:8000/updateBlog', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        
+        result: result,
         title: title,
         content: html,
         author: Cookies.get('_id'),
@@ -119,12 +128,31 @@ export default function Index() {
       .then(data => console.log(data))
       .catch(error => console.error('Error:', error));
 
+
+      }
+
+
   }
 
   if(!Cookies.get('uid')){
     return <Navigate to="/becomeReader" />    
   }
+
+
+  const uploadHandleBlogImage = (e) => {
+    const file = e.target.files[0];
+      if (file) {
+      // Create a local URL for preview
+      const imagePreviewUrl = URL.createObjectURL(file);
+      setFile(imagePreviewUrl);
+    
+    }
+
+  
+    
+  };
   return (
+    
     
     <>
 
@@ -135,7 +163,7 @@ export default function Index() {
     
     <div className="padding-sides  flex " style={{paddingTop: "5%", paddingBottom: "10px"}}>
     
-<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="orange"><path d="M420-160v-520H200v-120h560v120H540v520H420Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="orange"><path d="M420-160v-520H200v-120h560v120H540v520H420Z"/></svg>
     <input type="text" placeholder="Your Blog Title" className="blog-title"  value={title}   onChange={(e) => setTitle(e.target.value)} required  />
 
     </div>
@@ -168,7 +196,7 @@ export default function Index() {
     <div className="meta-data">
     <div className="slug-wrap card-style" style={{paddingRight: "10px"}}>
       <p>Slug</p>
-      <input className="" style={{border: "none", outline: "none"}} value={'http://localhost:3000/blog/'} />
+      <input className="" style={{border: "none", outline: "none"}} value={location?.state?.key ?? "www.blog-made-easy.vercel.app/publish"}/>
     </div>
     <div className="card-style flex">
     
@@ -186,8 +214,8 @@ export default function Index() {
     </div>
     <div className="card-style">
     <p>Blog Feature Image</p>
-  <img src={file} style={{width: "100%", height: "100px"} } />
-      <input type="file" id="file-input" onChange={(e) => setFile(e.target.files[0])} />
+  <img src={file} style={{width: "fit-content", height: "fit-content", borderRadius: "5px"} } />
+      <input type="file" id="file-input" onChange={uploadHandleBlogImage} />
     </div>
 
     <div className="card-style">
@@ -203,10 +231,13 @@ export default function Index() {
     </div>
 
       </div>
+
+   
       <Footer/>
       </div>
     </>
     
+
 );
 }
 

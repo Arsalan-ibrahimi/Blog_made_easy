@@ -81,11 +81,20 @@ export default function WhyUs() {
       </div>
     </div>
 
-    <div className="faq-right">
-      <h3>In what way can we help?</h3>
-      <p>Feel free to reach out to us with your inquiries.</p>
+    <div className="">
+      
 
-      <form className="faq-form">
+      <div className="faq-card">
+        <div class="cookie-card">
+    <span class="title">🤔 Still have questions?</span>
+    <p class="description">Still cant find the answer to your query? leave a question by filling out the form and we will get in touch shortly </p>
+    <div class="actions">
+      
+    </div>
+</div>
+      </div>
+
+      <form className="faq-form faq-right">
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="John Smith"/>
 

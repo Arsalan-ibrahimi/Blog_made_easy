@@ -805,7 +805,7 @@ flex-direction: column;
   flex-direction: column;
   gap: 1rem;
 }
-.blog-card-list-profile
+.blog-card-list-prof
 {
   display: flex;
   flex-direction: column;
@@ -906,13 +906,14 @@ flex-direction: column;
 .user-name {
     font-weight: 600;
     margin: 15px 0 8px;
+    text-transform: uppercase;
 }
 
 .user-mail {
     color: #9a9a9a;
     font-size: 12px;
     font-weight: 300;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .user-profile {
@@ -1568,3 +1569,46 @@ background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/s
 
 
 /** Bento Style */
+
+
+
+.cookie-card {
+ 
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 10px;
+ margin-bottom: 5px;
+}
+
+.title {
+  font-weight: 600;
+  color: rgb(31 41 55);
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(75 85 99);
+}
+
+.description a {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246);
+}
+
+.description a:hover {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  -moz-column-gap: 1rem;
+  column-gap: 1rem;
+  flex-shrink: 0;
+}
+

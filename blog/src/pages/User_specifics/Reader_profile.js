@@ -44,11 +44,11 @@ console.log(userBlogs);
     const days = Math.floor(difference / 1000 / 60 / 60 / 24);
 
     if (minutes < 60) {
-      return `${minutes} minutes ago`;
+      return `Published ${minutes} minutes ago`;
     } else if (hours < 24) {
-      return `${hours} hours ago`;
+      return `Published ${hours} hours ago`;
     } else {
-      return `${days} days ago`;
+      return `Published ${days} days ago`;
     }
   };
 
@@ -60,7 +60,8 @@ export default function Reader_profile() {
     <ReaderBlogCard
       key={blog._id}
       title={blog.title}
-      author={calculateTime(blog.timestamp)}
+      timeStmp={calculateTime(blog.timestamp)}
+      timeActual = {blog.timestamp}
       content={blog.content}
       img={"https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg?auto=compress&cs=tinysrgb&w=1200"}
       url={'/BlogPost/' + blog._id}
@@ -132,9 +133,9 @@ export default function Reader_profile() {
 
               {activeTab === "profile" &&  
 			  <div class="content">
-					<ProfileCard name={userData[0].name} ProfileURL = {userData[0].profile}/>
+					<ProfileCard name={userData[0].name} email={userData[0].email} ProfileURL = {userData[0].profile}/>
 					<div class="content-main">
-					<div class="blog-card-list-profile">
+					<div class="blog-card-list-prof">
 							<div class="content-header-intro">
 								<h2>Your Blogs</h2>
 							</div>
@@ -159,9 +160,9 @@ export default function Reader_profile() {
            
             </div>
           </main>
+        <Footer />
         </div>
 
-        <Footer />
       </div>
     );
   }

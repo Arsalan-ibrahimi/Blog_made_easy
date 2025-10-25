@@ -9,8 +9,8 @@ function navMenu(props)
     if(Cookies.get("uid"))
     {
         return( 
-            <>
-        <nav className='nav-wrap' >
+            <div className=''>
+        <nav className='nav-wrap-user' >
          <div className="reader-menu-specific">
 			<ul>
 				<li>
@@ -45,12 +45,12 @@ function navMenu(props)
         </nav>
 
        
-        </>
+        </div>
         )
     }
     else{
     return(
-       <>
+       <div>
         <nav className='nav-wrap'>
             <ul>
                 <li><Link to='/'>Home</Link></li>
@@ -84,7 +84,7 @@ function navMenu(props)
         </nav> 
 
         
-        </>
+        </div>
     )
 }
 }
