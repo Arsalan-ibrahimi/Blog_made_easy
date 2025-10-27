@@ -237,6 +237,16 @@ background: linear-gradient(0deg, rgb(255, 255, 255) 0%,  rgba(255, 255, 255, 0.
     align-items: center;
     
 }
+.align-center
+{
+ align-items: center; 
+}
+
+.insight-main
+{
+ 
+  /* margin: 5px; */
+}
 
 .Patron_Form 
 {

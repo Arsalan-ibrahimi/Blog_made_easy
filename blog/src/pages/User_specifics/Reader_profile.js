@@ -8,7 +8,7 @@ import ReaderBlogCard from "./readerBlogCard";
 import Cookies from "js-cookie";
 import ProfileCard  from "./ProfileCard";
 import FollowingsList from "./FollowingsList";
-
+import Chart from '../sections/chart'
 
 import "./styles.css";
 
@@ -134,7 +134,14 @@ export default function Reader_profile() {
               {activeTab === "profile" &&  
 			  <div class="content">
 					<ProfileCard name={userData[0].name} email={userData[0].email} ProfileURL = {userData[0].profile}/>
-					<div class="content-main">
+				
+         <div className="content-main insight-main">
+                 <p>Your Insights</p>
+
+                  <Chart/>
+                </div>
+        
+        	<div class="content-main ">
 					<div class="blog-card-list-prof">
 							<div class="content-header-intro">
 								<h2>Your Blogs</h2>
@@ -149,6 +156,7 @@ export default function Reader_profile() {
 						)}
 					</div>
                 </div>
+               
             
 			  </div>}
               {activeTab === "followings" && <div><FollowingsList/></div>}

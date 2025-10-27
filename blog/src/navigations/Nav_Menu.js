@@ -58,8 +58,8 @@ function navMenu(props)
                 <li><Link to='/settings'>Settings</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>
                 <li><Link to='/'><img src={logo}></img></Link></li>
-                <li><Link to='/becomeAuthor' className='universal-button'>Become a Writer</Link></li>
-                <li><Link to='/becomeReader'className='universal-button'>Become a Patron</Link></li>
+                {/* <li><Link to='/becomeAuthor' className='universal-button'>Become a Writer</Link></li> */}
+                <li><Link to='/becomeReader'className='universal-button'>Sign Up</Link></li>
 
                 <Outlet/>
             </ul>

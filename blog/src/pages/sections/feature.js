@@ -17,39 +17,40 @@ function App() {
   
     <section class="features-section">
     <div class="features-header">
-      <h2>Enjoy the finest features<br/>with our products</h2>
-      <p>We provide all the advantages that can simplify all your financial transactions without any further requirements</p>
+      <h2>Enjoy the finest features<br/>with our Blogging Features</h2>
+      <p>We provide all the advantages that can simplify all your blogging needs.</p>
       <a href="#" class="get-started">Get Started →</a>
     </div>
 
     <div class="feature-container">
       <div class="feature-card ">
-        <div class="icon">💳</div>
-        <h3>Easy Payment</h3>
-        <p>We provide various methods for you to carry out all transactions related to your finances.</p>
+        <div class="icon">🖥️</div>
+        <h3>Simple UI</h3>
+        <p>Benefit from easy-to-use and straight-forward user interface.</p>
       </div>
 
       <div class="feature-card">
-        <div class="icon">🔒</div>
-        <h3>Safe Transaction</h3>
-        <p>We have the most up-to-date security to support the security of all our customers in carrying out all transactions.</p>
+        <div class="icon">❤️</div>
+        <h3>Gain Followers</h3>
+        <p>Reach your target audience with precision searching algorithm</p>
       </div>
 
-      <div class="feature-card active">
-        <div class="icon">⚡</div>
-        <h3>Fast Customer Service</h3>
-        <p>Provide customer service for those of you who have problems 24 hours a week.</p>
+       <div class="feature-card active">
+        <div class="icon">🤖</div>
+        <h3>AI Powered Drafts</h3>
+        <p>With your AI Assistant, create blog drafts with prompts to get your blog started</p>
       </div>
 
-      <div class="feature-card">
-        <div class="icon">🚀</div>
-        <h3>Quick Transaction</h3>
-        <p>We provide faster transaction speeds than competitors, so money arrives and is received faster.</p>
+      <div class="feature-card ">
+        <div class="icon">🧩</div>
+        <h3>Manage Blog Chunks</h3>
+        <p>Using visual editor, move your blog content around to create idea flows.</p>
       </div>
+     
        <div class="feature-card">
         <div class="icon">🚀</div>
-        <h3>Quick Transaction</h3>
-        <p>We provide faster transaction speeds than competitors, so money arrives and is received faster.</p>
+        <h3>Kickstart your Career</h3>
+        <p>Make your blogging journey a reality with ready to use templates</p>
       </div>
     </div>
   </section>

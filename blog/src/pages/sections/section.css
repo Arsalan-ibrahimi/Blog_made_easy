@@ -255,11 +255,12 @@ padding: 5% 0px;
 }
 
 .feature-card {
-  background: #f9f9f9;
+
   border-radius: 10px;
   padding: 25px 20px;
   text-align: left;
   transition: 0.3s ease;
+  box-shadow: rgba(152, 152, 153, 0.212) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 
 .feature-card.active {
@@ -284,9 +285,7 @@ padding: 5% 0px;
   color: inherit;
 }
 
-.feature-card:hover {
-  transform: translateY(-5px);
-}
+
 
 
 
@@ -752,10 +751,11 @@ padding: 5% 0px;
 /* Left Image Card */
 .image-card {
   position: relative;
-  flex: 0.9;
+ 
+  width: 50%;
   border-radius: 20px;
   overflow: hidden;
-   background-image: url("https://images.unsplash.com/photo-1656703628394-8363fea4ca91?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=735");
+   background-image: url("https://images.unsplash.com/photo-1471696035578-3d8c78d99684?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170");
    background-position: center;
 }
 
@@ -800,6 +800,8 @@ padding: 5% 0px;
   flex: 1.6;
 }
 
+
+
 .reviews h2 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -813,6 +815,7 @@ padding: 5% 0px;
 .review-slider {
   position: relative;
   overflow: hidden;
+  
 }
 
 .review-cards {
@@ -822,10 +825,9 @@ padding: 5% 0px;
 }
 
 .card-testi {
-  min-width: 100%;
-
-  border-radius: 8lpx;
-  padding: 20px;
+  min-width: 96%;
+  border-radius: 8px;
+  padding: 10px;
  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
@@ -908,3 +910,38 @@ padding: 5% 0px;
   cursor: pointer;
   color: #1d4ed8;
  }
+ 
+
+ /** chart **/
+.chart__container {
+      border-radius: 8px;
+
+border: 1px solid #e4e4e4;
+    
+  display: inline-block;
+
+}
+.row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

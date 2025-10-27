@@ -24,58 +24,46 @@ export default function WhyUs() {
   <div className="faq-container">
     <div className="faq-left">
       <h2>Frequently Asked Questions</h2>
-      <p className="subtitle">Trusted in more than 100 countries and 5 million customers.</p>
+      <p className="subtitle">Your enquiries are always a top priority</p>
 
       <div className="faq-box">
         <div className="faq-item active">
           <div className="faq-question">
-            How do I update my billing information?
+            Do i need to pay to get started?
           </div>
           <div className="faq-answer">
-            To update your billing information, log in and go to the billing or payment page.
-            Look for an option to “Update payment method” or “Edit billing information” and
-            follow the prompts. Be sure to save your changes before exiting.
+            To get your blogging journey a start, you don't need to purchase any subscription. It is cost-free
           </div>
         </div>
 
         <div className="faq-item">
-          <div className="faq-question">How do I delete my account?</div>
+          <div className="faq-question">Are there any limits on the AI Assistant's credit?</div>
           <div className="faq-answer">
-            To update your billing information, log in and go to the billing or payment page.
-            Look for an option to “Update payment method” or “Edit billing information” and
-            follow the prompts. Be sure to save your changes before exiting.
+            A Free tier gets your 3 drafts every day and any more requests will require addition costs.
           </div>
         </div>
         <div className="faq-item">
-          <div className="faq-question">How do I join a group or community?</div>
+          <div className="faq-question">Is the draft visual editor feature free of cost?</div>
           <div className="faq-answer">
-            To update your billing information, log in and go to the billing or payment page.
-            Look for an option to “Update payment method” or “Edit billing information” and
-            follow the prompts. Be sure to save your changes before exiting.
+            Yes, The visual editor feature is free to use for all tier users.
           </div>
         </div>
         <div className="faq-item">
           <div className="faq-question">How can I contact customer support?</div>
           <div className="faq-answer">
-            To update your billing information, log in and go to the billing or payment page.
-            Look for an option to “Update payment method” or “Edit billing information” and
-            follow the prompts. Be sure to save your changes before exiting.
+            Leave a message on our website form or email us to get in touch.
           </div>
         </div>
         <div className="faq-item">
-          <div className="faq-question">Which is better short term or long term?</div>
+          <div className="faq-question">How can i reach my target audience?</div>
           <div className="faq-answer">
-            To update your billing information, log in and go to the billing or payment page.
-            Look for an option to “Update payment method” or “Edit billing information” and
-            follow the prompts. Be sure to save your changes before exiting.
+           By filling the target audience question form, we can help you reach your target audience
           </div>
         </div>
         <div className="faq-item">
           <div className="faq-question">How do I change my email address?</div>
           <div className="faq-answer">
-            To update your billing information, log in and go to the billing or payment page.
-            Look for an option to “Update payment method” or “Edit billing information” and
-            follow the prompts. Be sure to save your changes before exiting.
+           You can change your credentials in your profile - user settings option
           </div>
         </div>
       </div>
@@ -102,7 +90,7 @@ export default function WhyUs() {
         <input type="email" id="email" placeholder="pagename@gmail.com"/>
 
         <label for="question">Write Your Question</label>
-        <textarea id="question" placeholder="Enter here..."></textarea>
+        <textarea id="question" placeholder="Message"></textarea>
 
         <button type="submit">Submit Now</button>
       </form>

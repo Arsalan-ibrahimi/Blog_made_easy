@@ -6,28 +6,36 @@ export default function Testimonils() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const cards = [
-    {
-      text: "Informed Opinions' workshop was informative and highly productive. My op-ed was translated into multiple languages and was the most read story across all Vice networks worldwide for a full day. The feedback has been phenomenal and exciting opportunities have emerged from it.",
-      name: "Naila Keleta-Mae",
-      title: "Professor of Theatre and Performance, University of Waterloo",
-      image: "profile1.jpg",
-      stars: "⭐⭐⭐⭐☆",
-    },
-    {
-      text: "So much incredibly valuable content delivered in a consistently compelling, practical and enjoyable way.",
-      name: "Jess Hadley",
-      title: "Labour and Employment Specialist",
-      image: "profile2.jpg",
-      stars: "⭐⭐⭐⭐⭐",
-    },
-    {
-      text: "The experience truly boosted my confidence and improved my professional communication skills.",
-      name: "Amira Chen",
-      title: "Marketing Consultant",
-      image: "profile3.jpg",
-      stars: "⭐⭐⭐⭐⭐",
-    },
-  ];
+  {
+    text: "I was spinning my wheels trying to launch my blog, but thanks to Blog Made Easy I got up and running in no time. The clean interface makes writing enjoyable—now I post every week without stress.",
+    name: "Naila Keleta-Mae",
+    title: "Lifestyle Blogger",
+    image: "https://avatar.iran.liara.run/public/6",
+    stars: "⭐⭐⭐⭐⭐",
+  },
+  {
+    text: "Blog Made Easy transformed how I share my ideas. The simplicity and speed are unmatched—it feels like my creativity finally has a home.",
+    name: "Jess Hadley",
+    title: "Creative Content Strategist",
+    image: "https://avatar.iran.liara.run/public/40",
+    stars: "⭐⭐⭐⭐⭐",
+  },
+  {
+    text: "I never thought managing a blog could be this easy. The layout is modern, intuitive, and helps me focus on what matters—my writing.",
+    name: "Amira Chen",
+    title: "Marketing Consultant",
+    image: "https://avatar.iran.liara.run/public/13",
+    stars: "⭐⭐⭐⭐⭐",
+  },
+  {
+    text: "From drafting to publishing, everything just flows perfectly. Blog Made Easy is exactly what every writer needs to stay consistent and inspired.",
+    name: "Liam Patel",
+    title: "Freelance Writer",
+    image: "https://avatar.iran.liara.run/public/21",
+    stars: "⭐⭐⭐⭐⭐",
+  },
+];
+
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % cards.length);
@@ -56,8 +64,7 @@ export default function Testimonils() {
         <div className="reviews">
           <h2>Real Stories. Real Impact.</h2>
           <p className="subtitle">
-            Hear directly from the women and gender-diverse experts we’ve
-            empowered through our programs.
+           Hear directly from bloggers who use Easy Blog everyday to make impact
           </p>
 
           <div className="review-slider">

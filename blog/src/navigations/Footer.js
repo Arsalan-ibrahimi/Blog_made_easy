@@ -4,7 +4,7 @@ function Footer()
 
     return(
      
-<footer class="footer padding-sides">
+<footer class="footer padding-sides" >
   <div class="footer__addr">
     <h1 class="footer__logo">Easy Blogs</h1>
         
