@@ -5,6 +5,7 @@
     "cookie-parse": "^0.4.0",
     "express-session": "^1.18.0",
     "jquery": "^3.7.1",
+    "lucide-react": "^0.548.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "react-redux": "^9.1.2",
