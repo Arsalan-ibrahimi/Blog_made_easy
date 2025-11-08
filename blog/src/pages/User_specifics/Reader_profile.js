@@ -35,7 +35,7 @@ if(id)
 }
 
 
-console.log(userBlogs);
+// console.log(userBlogs);
   const calculateTime = (timestamp) => {
     const difference = Date.now() - new Date(timestamp).getTime();
 

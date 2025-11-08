@@ -2,9 +2,34 @@ import React, { useState, useEffect } from 'react';
 
 import Footer from '../navigations/Footer'
 import Navbar from '../navigations/Nav_Menu'
+import Cookies from "js-cookie";
 
 const MagdesignMagazine = () => {
+  console.log('body rendered');
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+ useEffect(() => {
+ fetch("http://localhost:8000/getBlogs", {
+	  method: "GET",
+	  headers: {
+		"Content-Type": "application/json",
+	  },
+	  
+	})
+	  .then((response) => response.json())
+	  .then((data) => {
+		setData(data);
+    setLoading(false);
+      
+	  });
+
+
+ },[]);
+
+
 
   const featuredPosts = [
     {
@@ -495,8 +520,12 @@ const MagdesignMagazine = () => {
     }
   };
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
   return (
+  
     <div style={styles.body}>
+     
       <style>
         {`
           @keyframes fadeUp {
@@ -513,6 +542,8 @@ const MagdesignMagazine = () => {
       </style>
   
           <Navbar/>
+
+
   
 
       {/* Hero Slider */}
@@ -600,6 +631,13 @@ const MagdesignMagazine = () => {
           </div>
         </div>
       </div>
+
+            <div><p>dynamic content</p>
+            {/* <pre>{myContent}</pre> */}
+           
+
+            </div>
+
 
       {/* Main Content */}
       <div style={styles.container}>
@@ -758,6 +796,25 @@ const MagdesignMagazine = () => {
       <Footer/>
     </div>
   );
+  
 };
 
+
 export default MagdesignMagazine;
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // UI rendering
+  
+
+

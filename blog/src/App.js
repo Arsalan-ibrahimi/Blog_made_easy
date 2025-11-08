@@ -12,6 +12,7 @@ import PublishPage from './pages/publish.js';
 import ReaderProfile from './pages/User_specifics/Reader_profile.js';
 import PatronSignin from './pages/Authentication/PatronSign.js'
 import './App.css';
+import './pages/sections/section.css'
 import SingleBlog from './pages/sections/SingleBlog.js';
 
 

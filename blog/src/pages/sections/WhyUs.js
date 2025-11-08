@@ -13,6 +13,7 @@ export default function WhyUs() {
 
       // Toggle current one
       item.classList.toggle('active');
+      
     });
   });
 

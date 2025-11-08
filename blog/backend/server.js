@@ -212,10 +212,10 @@ app.post ('/loginReader', (req, res) => {
     (async () => {
         try {
             const response = await db.db.collection('BlogContent').find({}).toArray();
-            console.log(response);
+            // console.log(response);
             res.send(response);
           } catch (error) {
-            console.log('Error occurred while inserting', error);
+            console.log('Error occurred while fetching Blogs', error);
           }
     })();
   });
